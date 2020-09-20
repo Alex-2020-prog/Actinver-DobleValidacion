@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Valores Maker</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+
+	<script>
+		function UpdOperadora(){
+			if($("#TipoFdo_input").val() == "propio" ){
+				$("#iOperadora").addClass("ui-state-disabled");
+				$("#iOperadora").val("Actinver");
+			}else {
+				$("#iOperadora").removeClass("ui-state-disabled");
+				$("#iOperadora").val("");
+			}
+		}
+	</script>
+</h:head>
+
+<h:body>
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Valores Maker" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+		<br/>
+		<h:form>
+			 <p:panelGrid id="main-panel" columns="4" layout="grid" contentStyleClass="ui-fluid">
+		
+			    <p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
+			    <p:selectOneMenu id="TipoFdo" style="width:150px;" onchange="UpdOperadora()">
+			        <f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
+			        <f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
+			    </p:selectOneMenu>
+		
+			    <p:outputLabel for="iDenominacionSocial" value="Denominación Social:" />
+			    <p:inputText id="iDenominacionSocial" required="true"/>
+			 
+			    <p:outputLabel for="textB2" value="Clave de Pizarra:" />
+			    <p:inputText id="textB2" style="width:150px;" required="true" />
+			 
+			    <p:outputLabel for="textB1" value="Clave ISIN:" />
+			    <p:inputText id="textB1" style="width:150px;" required="true"/>
+			 
+			    <p:outputLabel for="iOperadora" value="Operadora:" />
+			    <p:inputText id="iOperadora" value="Actinver" disabled="true" required="true"/>
+		
+			    <p:outputLabel for="dateB" value="Alta del fondo:" />
+			    <p:datePicker id="dateB" showIcon="true" style="width:auto" pattern="yyyy-MMM-dd"/>
+			 
+			    <p:outputLabel for="selectMoneda" value="Moneda:" />
+			    <p:selectOneMenu id="selectMoneda" style="width:118px;">
+			        <f:selectItem itemLabel="MX" itemValue="mx" />
+			        <f:selectItem itemLabel="USD" itemValue="usd" />
+			        <f:selectItem itemLabel="EUR" itemValue="eur" />
+			    </p:selectOneMenu>
+			 
+			    <p:outputLabel for="selectTipoSI" value="Tipo de Soc.Inv.:" />
+			    <p:selectOneMenu id="selectTipoSI" style="width:179px">
+			        <f:selectItem itemLabel="Deuda" itemValue="deuda" />
+			        <f:selectItem itemLabel="Renta Variable" itemValue="rtaVar" />
+			        <f:selectItem itemLabel="Cobertura" itemValue="cobertura" />
+			    </p:selectOneMenu>
+
+				<p:outputLabel for="iHorarioAperturaFondoCompraOperadora" value="Horario Apertura Compra: "/>
+				<p:inputText id="iHorarioAperturaFondoCompraOperadora" value="#{valoresMaker.horarioAperturaFondoCompraOperadora}" style="width:118px;"/>							
+				
+				<p:outputLabel for="iHorarioCierreFondoCompraOperadora" value="Horario Cierra Compra: "/>
+				<p:inputText id="iHorarioCierreFondoCompraOperadora" value="#{valoresMaker.horarioCierreFondoCompraOperadora}" style="width:118px;"/>
+											
+				<p:outputLabel for="iHorarioAperturaFondoVentaOperadora" value="Horario Aprrtura Venta: "/>
+				<p:inputText id="iHorarioAperturaFondoVentaOperadora" value="#{valoresMaker.horarioAperturaFondoVentaOperadora}" style="width:118px;"/>							
+				
+				<p:outputLabel for="iHorarioCierreFondoVentaOperadora" value="Horario Cierra Venta: "/>
+				<p:inputText id="iHorarioCierreFondoVentaOperadora" value="#{valoresMaker.horarioCierreFondoVentaOperadora}" style="width:118px;"/>		
+
+			</p:panelGrid>
+			<p:commandButton value="Continuar" />
+		</h:form>
+		</h:panelGroup>
+	
+	<h:panelGroup layout="block" styleClass="footer-info">
+		<br/> 
+	    <h:outputText value="Software By Soporte Producción Actinver. 2020 ©"/>
+   	</h:panelGroup>
+
+</h:body>
+</html>

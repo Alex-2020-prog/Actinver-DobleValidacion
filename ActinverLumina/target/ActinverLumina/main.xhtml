@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Valores Maker</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+
+</h:head>
+
+<h:body>
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Valores Maker" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+		<br/>
+		<h:panelGroup layout="block" style="width:980px;margin:0 auto;background:white;position: relative;">
+			 <p:panelGrid columns="4" layout="grid" contentStyleClass="ui-fluid">
+		
+			    <p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
+			    <p:selectOneMenu id="TipoFdo">
+			        <f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
+			        <f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
+			    </p:selectOneMenu>
+		
+			    <p:outputLabel for="textB1" value="Denominación Social:" />
+			    <p:inputText id="textB1" />
+			 
+			    <p:outputLabel for="textB2" value="Clave de Pizarra:" />
+			    <p:inputText id="textB2" />
+			 
+			    <p:outputLabel for="textB1" value="Clave ISIN:" />
+			    <p:inputText id="textB1" />
+			 
+			    <p:outputLabel for="textB2" value="Operadora:" />
+			    <p:inputText id="textB2" value="Actinver" disabled="true"/>
+		
+			    <p:outputLabel for="dateB" value="Alta del fondo:" />
+			    <p:datePicker id="dateB" showIcon="true" style="width:auto" pattern="yyyy-MMM-dd"/>
+			 
+			    <p:outputLabel for="selectMoneda" value="Moneda:" />
+			    <p:selectOneMenu id="selectMoneda">
+			        <f:selectItem itemLabel="MX" itemValue="mx" />
+			        <f:selectItem itemLabel="USD" itemValue="usd" />
+			        <f:selectItem itemLabel="EUR" itemValue="usd" />
+			    </p:selectOneMenu>
+			 
+			    <p:outputLabel for="selectTipoSI" value="Tipo de Soc.Inv.:" />
+			    <p:selectOneMenu id="selectTipoSI">
+			        <f:selectItem itemLabel="Deuda" itemValue="deuda" />
+			        <f:selectItem itemLabel="Renta Variable" itemValue="rtaVar" />
+			        <f:selectItem itemLabel="Cobertura" itemValue="cobertura" />
+			    </p:selectOneMenu>
+			 	 
+			</p:panelGrid>
+		</h:panelGroup>
+	</h:panelGroup>
+
+</h:body>
+</html>

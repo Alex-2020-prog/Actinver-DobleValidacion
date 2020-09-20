@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+/*Estilo para la plantilla*/
+.wrapper {margin:0 auto;font-family:'Lato';overflow-x:hidden;}
+.header-wrapper {width:980px;margin:0 auto;color:white;height:50px;background-color:#041E42;}
+.header-menu {width:490px;font-family:'Lato';font-size:16px;text-align:left;}
+.header-info {width:490px;}
+.header-info-table {text-align:right;font-size:16px;}
+.header-info-table-sesion{color:white;text-decoration:none;font-family:'Lato';font-size:16px;}
+.header-info-table-sesion:hover {color:#ec9b1b;text-decoration:none;font-family:'Lato';font-size:16px;}
+.body-wrapper {width:980px;margin:0 auto;background:white;position: relative;min-height: 400px;}
+.footer-info {margin:0 auto;background:#e0e0e0;width:980px;height:50px;font-size:16px;color:#777;text-align:center;}
+
+.ui-clock {background-color:#041E42;background:#041E42;font-weight: normal;padding: 0px !important;text-shadow: none;color: white;border: none;}
+
+/*Estilo para la página de inicio de sesión*/
+.login-wrapper {background-image: url("../resources/images/chavosactitud.png");background-repeat:no-repeat;background-position:top;height:580px;}
+.login-form {width:320px;height:150px;padding-top:20px;margin-left:50px;}
+.login-info {width:440px;margin-left:50px;height:315px;}
+
+/*Estilo para conciliacionLumina*/
+.ui-widget {font-family:'Lato';font-size:16px;}
+.inputfile {width:0.1px;height:0.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1;}
+/*.headerButtons-imgPanel {background:#777;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:42px;}
+.headerButtons-leyendaPanel {background:white;padding:0px;color:#777;font-size:16px;text-align:center;}
+.headerButtons-imgPanel:hover {background-color:#777;color:white;}*/
+
+.headerButtons-imgPanel {background:#ec9b1b;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:95px;}
+.headerButtons-leyendaPanel {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding:0px;}
+.headerButtons-imgPanel:hover {background-color:#041E42;color:#ec9b1b;}
+
+.headerButtons-imgPanelDistribuidoraFondos {background:#ec9b1b;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:42px;}
+.headerButtons-leyendaPanelDistribuidoraFondos {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding-right: 30px;}
+.headerButtons-imgPanelDistribuidoraFondos:hover {background-color:#041E42;color:#ec9b1b;}
+
+.headerButtons-imgPanelOperadoraFondos {background:#ec9b1b;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:42px;}
+.headerButtons-leyendaPanelOperadoraFondos {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding-right:180px;}
+.headerButtons-imgPanelOperadoraFondos:hover {background-color:#041E42;color:#ec9b1b;}
+
+.headerButtons-imgPanelOperadoraFondosDisabled {background:#777;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:42px;}
+.headerButtons-leyendaPanelOperadoraFondosDisabled {background:white;color:#777;font-size:16px;text-align:center;padding-right:180px;}
+.headerButtons-imgPanelOperadoraFondosDisabled:hover {background-color:#777;color:white;}
+
+.headerButtons-imgPanelSoporteConciliacionLuminaSap {background:#ec9b1b;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:189px;}
+.headerButtons-leyendaPanelSoporteConciliacionLuminaSap {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding-right: 30px;}
+.headerButtons-imgPanelSoporteConciliacionLuminaSap:hover {background-color:#041E42;color:#ec9b1b;}
+
+/*Estilo para precioFondosLumina*/
+.ui-datatable-tablewrapper {font-family:'Lato';font-size:16px;}
+.ui-datatable-header .ui-widget-header .ui-corner-top {background:#041E42;}
+.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {background:#041E42;}
+.ui-column-title{color:#ec9b1b;text-shadow:none;}
+.ui-datatable tbody td {background:#e0e0e0 !important;}
+.ui-datatable thead th {background:#041E42 !important;}
+.ui-widget-content .ui-datatable-empty-message {display:none;}
+
+/*Estilo para los dialogos*/
+.ui-draggable .ui-dialog-titlebar {cursor:move;color:#ec9b1b;background:#041E42;text-shadow:none;text-align:center;}
+.ui-dialog .ui-dialog-title {float:unset !important;margin:.3em 16px .1em 0;}
+
+/*Estilo para los titulos*/
+.title{font-family:'Lato';color:#ec9b1b;text-shadow:none;}
+
+/*Estilo para equivalencia de fondos*/
+.ui-widget-header .ui-inputfield {font-weight:normal;height:20px;text-align:center;font-size:12px;}
+
+.ui-widget-header .ui-inputfield, .ui-widget-content .ui-inputfield {font-weight:normal;width:110px;}
+
+#smLayoutOperacionesExternas_label {width:190px;}
+#cLayoutOperacionesExternasFC_input {width:95px;}
+
+#smDistribuidor_label {width:190px;}
+#cFechaLiquidacion_input {width:95px;}
+
+.ui-panel .ui-panel-titlebar {background:#041E42;font-family:'Lato';color:white;text-shadow:none;}
+
+/*Estilo para encabezado de calendarios*/
+.ui-datepicker .ui-datepicker-header {background:#041E42;font-family:'Lato';color:#ec9b1b;text-shadow:none;}
+
+.ui-inputfield {width:165px;}
+
+.headerButtons-imgPanelMovimientosClientes {background:#ec9b1b;color:white;border-radius:200px 200px 200px 200px;width:75px;height:75px;margin-left:100px;}
+.headerButtons-leyendaPanelMovimientosClientes {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding-right: 30px;}
+.headerButtons-imgPanelMovimientosClientes:hover {background-color:#041E42;color:#ec9b1b;}
+
+#dlgDetalleOperacionesFondo_content {overflow-y:hidden;overflow-x:auto;}
+
+#dlgDetalleLiquidacionDistribuidor_content {overflow-y:hidden;overflow-x:auto;}
