@@ -83,6 +83,8 @@
 .headerButtons-leyendaPanelMovimientosClientes {background:white;color:#ec9b1b;font-size:16px;text-align:center;padding-right: 30px;}
 .headerButtons-imgPanelMovimientosClientes:hover {background-color:#041E42;color:#ec9b1b;}
 
+.styleButton {background:#041E42;color:#fff;font-size:16px;text-shadow:none;border-radius:1px;}
+
 #dlgDetalleOperacionesFondo_content {overflow-y:hidden;overflow-x:auto;}
 
 #dlgDetalleLiquidacionDistribuidor_content {overflow-y:hidden;overflow-x:auto;}
