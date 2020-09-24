@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Instrumentos en Flujo</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+</h:head>
+
+<h:body>
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Instrumentos en Flujo" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<br />
+	<h:form styleClass="body-wrapper">
+		<p:panelGrid columns="2" style="border:hidden">
+			<p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
+			<p:selectOneMenu id="TipoFdo" style="width:150px;">
+				<f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
+				<f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
+			</p:selectOneMenu>
+		</p:panelGrid>
+		<br />
+		<p:dataTable id="tblInst" var="inst"
+			value="#{dtInstRowView.instrumentos}">
+			<p:column headerText="Tipo de Instrumento">
+				<h:outputText value="#{inst.tipo}" />
+			</p:column>
+
+			<p:column headerText="Nombre">
+				<h:outputText value="#{inst.nombre}" />
+			</p:column>
+
+			<p:column headerText="Descripción">
+				<h:outputText value="#{inst.descripcion}" />
+			</p:column>
+
+			<p:column headerText="Estatus">
+				<h:outputText value="#{inst.estatus}" />
+			</p:column>
+
+			<p:column headerText="Días" >
+				<div align="center"><h:outputText value="#{inst.dias}"/></div>
+			</p:column>
+
+		</p:dataTable>
+	</h:form>
+
+</h:body>
+</html>

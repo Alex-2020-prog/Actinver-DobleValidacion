@@ -86,22 +86,10 @@
 			        <f:selectItem itemLabel="Renta Variable" itemValue="rtaVar" />
 			        <f:selectItem itemLabel="Cobertura" itemValue="cobertura" />
 			    </p:selectOneMenu>
-
-				<p:outputLabel for="iHorarioAperturaFondoCompraOperadora" value="Horario Apertura Compra: "/>
-				<p:inputText id="iHorarioAperturaFondoCompraOperadora" value="#{valoresMaker.horarioAperturaFondoCompraOperadora}" style="width:118px;"/>							
-				
-				<p:outputLabel for="iHorarioCierreFondoCompraOperadora" value="Horario Cierra Compra: "/>
-				<p:inputText id="iHorarioCierreFondoCompraOperadora" value="#{valoresMaker.horarioCierreFondoCompraOperadora}" style="width:118px;"/>
-											
-				<p:outputLabel for="iHorarioAperturaFondoVentaOperadora" value="Horario Aprrtura Venta: "/>
-				<p:inputText id="iHorarioAperturaFondoVentaOperadora" value="#{valoresMaker.horarioAperturaFondoVentaOperadora}" style="width:118px;"/>							
-				
-				<p:outputLabel for="iHorarioCierreFondoVentaOperadora" value="Horario Cierra Venta: "/>
-				<p:inputText id="iHorarioCierreFondoVentaOperadora" value="#{valoresMaker.horarioCierreFondoVentaOperadora}" style="width:118px;"/>	
 					
 			</p:panelGrid>
 
-			<p:commandButton value="Continuar" style="background:#041E42;color:#fff;font-size:16px;text-shadow:none;border-radius:1px;"/>
+			<p:commandButton value="Continuar" action="gestora.sp" ajax="false" class="styleButton"/>
 			<p:outputLabel/>
 			<p:outputLabel value=""/>
 

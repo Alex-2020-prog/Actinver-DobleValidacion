@@ -1,2 +1,9 @@
+com\actinver\app\controler\LiquidacionAddRowView.class
 com\actinver\app\UserBean.class
+com\actinver\app\model\Instrumento.class
+com\actinver\app\controler\InstrumentoView.class
 com\actinver\app\UsuarioBean.class
+com\actinver\app\controler\LiquidacionEditView.class
+com\actinver\app\service\InstrumentoService.class
+com\actinver\app\model\Liquidacion.class
+com\actinver\app\service\LiquidacionService.class

@@ -13,6 +13,17 @@
 	<h:outputStylesheet library="css" name="primeicons.css" />
 	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
 
+	<script>
+		function UpdOperadora(){
+			if($("#TipoFdo_input").val() == "propio" ){
+				$("#iOperadora").addClass("ui-state-disabled");
+				$("#iOperadora").val("Actinver");
+			}else {
+				$("#iOperadora").removeClass("ui-state-disabled");
+				$("#iOperadora").val("");
+			}
+		}
+	</script>
 </h:head>
 
 <h:body>
@@ -38,47 +49,57 @@
 
 	<h:panelGroup layout="block" styleClass="body-wrapper">
 		<br/>
-		<h:panelGroup layout="block" style="width:980px;margin:0 auto;background:white;position: relative;">
-			 <p:panelGrid columns="4" layout="grid" contentStyleClass="ui-fluid">
+		<h:form>
+			 <p:panelGrid id="main-panel" columns="4" layout="grid" contentStyleClass="ui-fluid">
 		
 			    <p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
-			    <p:selectOneMenu id="TipoFdo">
+			    <p:selectOneMenu id="TipoFdo" style="width:150px;" onchange="UpdOperadora()">
 			        <f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
 			        <f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
 			    </p:selectOneMenu>
 		
-			    <p:outputLabel for="textB1" value="Denominación Social:" />
-			    <p:inputText id="textB1" />
+			    <p:outputLabel for="iDenominacionSocial" value="Denominación Social:" />
+			    <p:inputText id="iDenominacionSocial" required="true"/>
 			 
 			    <p:outputLabel for="textB2" value="Clave de Pizarra:" />
-			    <p:inputText id="textB2" />
+			    <p:inputText id="textB2" style="width:150px;" required="true" />
 			 
 			    <p:outputLabel for="textB1" value="Clave ISIN:" />
-			    <p:inputText id="textB1" />
+			    <p:inputText id="textB1" style="width:150px;" required="true"/>
 			 
-			    <p:outputLabel for="textB2" value="Operadora:" />
-			    <p:inputText id="textB2" value="Actinver" disabled="true"/>
+			    <p:outputLabel for="iOperadora" value="Operadora:" />
+			    <p:inputText id="iOperadora" value="Actinver" disabled="true" required="true"/>
 		
 			    <p:outputLabel for="dateB" value="Alta del fondo:" />
 			    <p:datePicker id="dateB" showIcon="true" style="width:auto" pattern="yyyy-MMM-dd"/>
 			 
 			    <p:outputLabel for="selectMoneda" value="Moneda:" />
-			    <p:selectOneMenu id="selectMoneda">
+			    <p:selectOneMenu id="selectMoneda" style="width:118px;">
 			        <f:selectItem itemLabel="MX" itemValue="mx" />
 			        <f:selectItem itemLabel="USD" itemValue="usd" />
-			        <f:selectItem itemLabel="EUR" itemValue="usd" />
+			        <f:selectItem itemLabel="EUR" itemValue="eur" />
 			    </p:selectOneMenu>
 			 
 			    <p:outputLabel for="selectTipoSI" value="Tipo de Soc.Inv.:" />
-			    <p:selectOneMenu id="selectTipoSI">
+			    <p:selectOneMenu id="selectTipoSI" style="width:179px">
 			        <f:selectItem itemLabel="Deuda" itemValue="deuda" />
 			        <f:selectItem itemLabel="Renta Variable" itemValue="rtaVar" />
 			        <f:selectItem itemLabel="Cobertura" itemValue="cobertura" />
 			    </p:selectOneMenu>
-			 	 
+					
 			</p:panelGrid>
+
+			<p:commandButton value="Continuar" action="gestora.sp" ajax="false" class="styleButton"/>
+			<p:outputLabel/>
+			<p:outputLabel value=""/>
+
+		</h:form>
 		</h:panelGroup>
-	</h:panelGroup>
+	
+	<h:panelGroup layout="block" styleClass="footer-info">
+		<br/> 
+	    <h:outputText value="Software By Soporte Producción Actinver. 2020 ©"/>
+   	</h:panelGroup>
 
 </h:body>
 </html>
