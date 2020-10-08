@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Gestor de Operaciones</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+	
+</h:head>
+
+
+
+<h:body>
+
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu"
+			style="text-align: right;width: 545px;">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Propiedades Generales" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+
+		<h:form prependId="false">
+		
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel1" columns="2" layout="flex"
+					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel value="Propiedad " />
+					<p:outputLabel value="" />
+
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel2" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel for="iPropiedad" value="Nombre: " />
+					<p:inputText id="iPropiedad" style="width:550px;" />
+
+				</h:panelGrid>
+			</h:panelGroup>
+
+
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel3" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iValorPropiedad" value="Valor:   &nbsp;&nbsp;&nbsp;" />
+					<p:inputText id="iValorPropiedad" style="width:550px;" />
+						
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+				
+				<h:panelGrid id="panel4" columns="2" styleClass="">
+	
+					<h:panelGroup layout="block" 
+						style="text-align: left;width: 845px;">
+			
+					</h:panelGroup>
+			
+					<h:panelGroup layout="block" styleClass="">
+						 
+						<h:panelGroup layout="block">
+							<p:commandButton value="Agregar" action="#" async="true" style="background:#041E42;color:#fff;font-size:16px;text-shadow:none;border-radius:1px;"/><p:outputLabel/>
+								<p:outputLabel value=""/>
+						</h:panelGroup>
+						
+					</h:panelGroup>
+			
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel5" columns="4" layout="flex"
+					style="width:980px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					
+					<p:dataTable id="tblPropiedad" var="propiedad" value="#"
+							paginatorPosition="bottom"
+                 			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="10" style="margin-bottom:20px">
+                 
+                 		<p:column>
+				            <f:facet name="header">
+				                <h:outputText value="Propiedad" />
+				            </f:facet>
+				            <h:outputText value="RUTA_FILESERVER" />
+				        </p:column>
+				 
+				        <p:column>
+				            <f:facet name="header">
+				                <h:outputText value="Valor"/>
+				            </f:facet>
+				            <h:outputText value="/home/optimissa/Documentos/MDM_Fondos/" />
+				        </p:column>
+					
+					</p:dataTable>
+						
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+		</h:form>
+
+	</h:panelGroup>
+
+	<h:panelGroup layout="block" styleClass="footer-info">
+		<br />
+		<h:outputText value="Software By Soporte Producción Actinver. 2020 ©" />
+	</h:panelGroup>
+
+</h:body>
+
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Gestora</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+	<h:outputStylesheet library="primefaces" name="primeicons/primeicons.css" />
+	
+</h:head>
+
+<h:body>
+
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu" style="text-align: right;width: 545px;">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Gestora Checker" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+		<h:form id="form-gestor">
+
+			<p:accordionPanel multiple="true">
+		        <p:tab title="Información Principal del Fondo">
+		            <p:panelGrid style="width:100%;" styleClass="ui-noborder">
+		 				<p:row>
+							<p:column>
+								<p:outputLabel for="iTipoCustodia" value="Tipo de Custodia:" />
+							</p:column>
+							
+							<p:column>
+								<p:selectOneMenu id="iTipoCustodia" style="width:150px;" value="Propia" required="true" disabled="true">
+									<f:selectItem itemLabel="Propia" itemValue="propia" />
+									<f:selectItem itemLabel="Externa" itemValue="externa" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+		 				<p:row>
+							<p:column>
+								<p:outputLabel for="iCvePizarra" value="Clave de Pizarra:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iCvePizarra" value="#{dtGestora.fondo.clavePizarra}" style="width:150px;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iOperadora" value="Operadora:"/>
+							</p:column>
+							<p:column>
+								<p:inputText id="iOperadora" value="#{dtGestora.fondo.operadora}" required="true" disabled="true" />
+							</p:column>
+						</p:row>
+		 				<p:row>
+							<p:column>
+								<p:outputLabel for="selectTipoSI" value="Tipo de Soc.Inv.:" />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu id="selectTipoSI" style="width:180px" required="true" value="Renta Variable" disabled="true">
+									<f:selectItem itemLabel="Deuda" itemValue="deuda" />
+									<f:selectItem itemLabel="Renta Variable" itemValue="rtaVar" />
+									<f:selectItem itemLabel="Cobertura" itemValue="cobertura" />
+								</p:selectOneMenu>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="selectMoneda" value="Moneda:" />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu id="selectMoneda" style="width:118px;" required="true" value="MX" disabled="true">
+									<f:selectItem itemLabel="MX" itemValue="mx" />
+									<f:selectItem itemLabel="USD" itemValue="usd" />
+									<f:selectItem itemLabel="EUR" itemValue="eur" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iCodeProd" value="Codigo del producto:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iCodeProd" value="#{dtGestora.fondo.codProducto}" style="width:150px;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iBoxIdeval" value="Cajón Indeval:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iBoxIdeval" value="#{dtGestora.fondo.cajonIndeval}" style="width:150px;" required="true" disabled="true"/>
+							</p:column>
+						</p:row>
+		 				<p:row>
+							<p:column>
+								<p:outputLabel for="iBoxIdevalFondo" value="Cajón Indeval Fondo:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iBoxIdevalFondo" value="#{dtGestora.fondo.cajonIndevalFondo}" style="width:150px;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iContratoCustodio" value="Contrato Custodio:"/>
+							</p:column>
+							<p:column>
+								<p:inputText id="iContratoCustodio" value="#{dtGestora.fondo.contratoCustodio}" style="width:118px;" disabled="true"/>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iContratoSocioLiquidador" value="Contrato Socio Liquidador:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iContratoSocioLiquidador" value="#{dtGestora.fondo.contratoSocioLiq}" style="width:118px;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iIndevalFondo" value="Indeval Fondo:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iIndevalFondo" value="#{dtGestora.fondo.indevalFondo}" style="width:118px;" required="true" disabled="true"/>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iTipoValor" value="Tipo Valor:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iTipoValor" value="#{dtGestora.fondo.tipoValor}" style="width:118px;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iMercadoVarglobal" value="Mercado Varglobal:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iMercadoVarglobal" value="#{dtGestora.fondo.mercadoVarglobal}" style="width:118px;" required="true" disabled="true"/>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iValorVarglobal" value="Valor Varglobal:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iValorVarglobal" value="#{dtGestora.fondo.valVarglobal}" style="width:118px;" required="true" disabled="true"/>
+							</p:column>
+						</p:row>
+		           </p:panelGrid>
+		        </p:tab>
+		        <p:tab title="Contactos">
+		            <p:panelGrid style="width:100%;" styleClass="ui-noborder">
+		 				<p:row>
+							<p:column>
+								<p:outputLabel for="iTipoContacto" value="Tipo de Contacto:" />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu id="iTipoContacto" var="tipoContacto" value="#{dtGestora.contactos[0].tipoContacto}" style="width:150px;" disabled="true">
+									<f:selectItem itemLabel="Fisico" itemValue="fisico" />
+									<f:selectItem itemLabel="Moral" itemValue="moral" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iApellido" value="Apellido:"/>
+							</p:column>
+							<p:column>
+								<p:inputText id="iApellido" value="#{dtGestora.contactos[0].apellido}" style="width:100%;" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iNombre" value="Nombre:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iNombre" value="#{dtGestora.contactos[0].nombre}" style="width:100%;" disabled="true"/>
+							</p:column>					
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iDireccion" value="Direccion:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iDireccion" value="#{dtGestora.contactos[0].direccion}" style="width:100%;" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iCiudad" value="Ciudad:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iCiudad" value="#{dtGestora.contactos[0].ciudad}" required="true" disabled="true"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iTelefono" value="Teléfono" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iTelefono" value="#{dtGestora.contactos[0].telefono}" style="width:100%;" required="true" disabled="true"/>
+							</p:column>
+						</p:row>
+		
+						<p:row>
+						<p:column colspan="6"><hr/></p:column>
+						</p:row>
+						
+		             	<p:row>
+							<p:column>
+								<p:outputLabel for="iTipoContacto1" value="Tipo de Contacto:" />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu id="iTipoContacto1" var="tipoContacto" value="#{dtGestora.contactos[1].tipoContacto}" style="width:150px;" value="Fisico">
+									<f:selectItem itemLabel="Fisico" itemValue="fisico" />
+									<f:selectItem itemLabel="Moral" itemValue="moral" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iApellido1" value="Apellido:"/>
+							</p:column>
+							<p:column>
+								<p:inputText id="iApellido1" value="#{dtGestora.contactos[1].apellido}"  style="width:100%;"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iNombre1" value="Nombre:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iNombre1" value="#{dtGestora.contactos[1].nombre}" style="width:100%;"/>
+							</p:column>					
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iDireccion1" value="Direccion:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iDireccion1" value="#{dtGestora.contactos[1].direccion}"  style="width:100%;"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iCiudad1" value="Ciudad:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iCiudad1" value="#{dtGestora.contactos[1].ciudad}" />
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iTelefono1" value="Teléfono" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iTelefono1" value="#{dtGestora.contactos[1].telefono}" style="width:100%;"/>
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column colspan="6"><hr/></p:column>
+						</p:row>
+		 
+		              	<p:row>
+							<p:column>
+								<p:outputLabel for="iTipoContacto2" value="Tipo de Contacto:" />
+							</p:column>
+							<p:column>
+								<p:selectOneMenu id="iTipoContacto2" var="tipoContacto" value="#{dtGestora.contactos[2].tipoContacto}" style="width:150px;">
+									<f:selectItem itemLabel="Fisico" itemValue="fisico" />
+									<f:selectItem itemLabel="Moral" itemValue="moral" />
+								</p:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iApellido1" value="Apellido:"/>
+							</p:column>
+							<p:column>
+								<p:inputText id="iApellido1" value="#{dtGestora.contactos[2].apellido}"  style="width:100%;"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iNombre1" value="Nombre:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iNombre1" value="#{dtGestora.contactos[2].nombre}" style="width:100%;"/>
+							</p:column>					
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel for="iDireccion2" value="Direccion:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iDireccion2" value="#{dtGestora.contactos[2].direccion}"  style="width:100%;"/>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iCiudad2" value="Ciudad:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iCiudad2" value="#{dtGestora.contactos[2].ciudad}" />
+							</p:column>
+							<p:column>
+								<p:outputLabel for="iTelefono2" value="Teléfono" />
+							</p:column>
+							<p:column>
+								<p:inputText id="iTelefono2" value="#{dtGestora.contactos[2].telefono}" style="width:100%;"/>
+							</p:column>
+						</p:row>
+		                     
+		            </p:panelGrid>
+		        </p:tab>
+		        <p:tab title="Liquidaciones SDIs">
+		
+				    <p:dataTable id="liq1" widgetVar="liq1" var="liq" value="#{dtLiqAddRowView.liq1}" editable="true" >
+				        <p:column headerText="Efectivo/Seguridad">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.id}" /></f:facet>
+				                <f:facet name="input"><p:inputText id="modelInput" value="#{liq.id}" style="width:100%"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Rol">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.rol}" /></f:facet>
+				                <f:facet name="input"><p:inputText value="#{liq.rol}" style="width:100%" label="Rol"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Pagar/Registrar">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.pay}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.pay}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.brands}" var="pay" itemLabel="#{pay}" itemValue="#{pay}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Método">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.method}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.method}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.colors}" var="method" itemLabel="#{method}" itemValue="#{method}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Preferido ">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.preferred}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.preferred}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.colors}" var="preferred" itemLabel="#{preferred}" itemValue="#{preferred}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column style="width:32px">
+				            <p:rowEditor />
+				        </p:column>
+				    </p:dataTable>
+				 
+				     <div class="ui-g">
+				         <div class="ui-g-12">
+				             <p:commandButton value="Agregar" styleClass="styleButton" process="@this" 
+				                              action="#{dtLiqAddRowView.onAddNew()}" oncomplete="PF('liq1').addRow();"/>
+				         </div>
+				     </div>
+		
+		        </p:tab>
+		        <p:tab title="Cuenta Nostro">
+		
+				    <p:dataTable id="ctaNostro" widgetVar="ctaNostro" var="liq" value="#{dtAddRowView.liq1}" editable="true" >
+				        <p:column headerText="Nombre de la Cuenta">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.id}" /></f:facet>
+				                <f:facet name="input"><p:inputText id="accountName" value="#{liq.id}" style="width:100%"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Procedimiento de la Org.">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.year}" /></f:facet>
+				                <f:facet name="input"><p:inputText value="#{liq.year}" style="width:100%" label="Procedimiento"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Moneda">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.brand}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.brand}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.brands}" var="man" itemLabel="#{man}" itemValue="#{man}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Tipo">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.color}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.color}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.colors}" var="color" itemLabel="#{color}" itemValue="#{color}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Description ">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.color}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.color}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.colors}" var="color" itemLabel="#{color}" itemValue="#{color}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Entidad Legal ">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.color}" /></f:facet>
+				                <f:facet name="input">
+				                    <h:selectOneMenu value="#{liq.color}" style="width:100%">
+				                        <f:selectItems value="#{dtEditView.colors}" var="color" itemLabel="#{color}" itemValue="#{color}" />
+				                    </h:selectOneMenu>
+				                </f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column style="width:32px">
+				            <p:rowEditor />
+				        </p:column>
+				    </p:dataTable>
+				 
+				     <div class="ui-g">
+				         <div class="ui-g-12">
+				             <p:commandButton value="Agregar" styleClass="styleButton" process="@this" 
+				                              action="#{dtAddRowView.onAddNew()}" oncomplete="PF('liq1').addRow();"/>
+				         </div>
+				     </div>
+		
+		        </p:tab>
+		        <p:tab title="Libro de Operaciones">
+		
+				    <p:dataTable id="check" widgetVar="check" var="liq" value="#{dtAddRowView.liq1}" editable="true" >
+				        <p:column headerText="Chequera Euro">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.id}" /></f:facet>
+				                <f:facet name="input"><p:inputText id="iCheckEur" value="#{liq.id}" style="width:100%"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column headerText="Chequera USD">
+				            <p:cellEditor>
+				                <f:facet name="output"><h:outputText value="#{liq.year}" /></f:facet>
+				                <f:facet name="input"><p:inputText value="#{liq.year}" style="width:100%" label="Procedimiento"/></f:facet>
+				            </p:cellEditor>
+				        </p:column>
+				 
+				        <p:column style="width:32px">
+				            <p:rowEditor />
+				        </p:column>
+				    </p:dataTable>
+				 
+				     <div class="ui-g">
+				         <div class="ui-g-12">
+				             <p:commandButton value="Agregar" styleClass="styleButton" process="@this" 
+				                              action="#{dtAddRowView.onAddNew()}" oncomplete="PF('liq1').addRow();"/>
+				         </div>
+				     </div>
+		
+		        </p:tab>
+		    </p:accordionPanel>
+
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGroup layout="block" style="width:50%;text-align: left;">
+					<h:panelGroup layout="block">
+					
+						<img src="../../resources/images/altaFondo/gestoraChk.png" width="360"
+	   		 				height="64" alt="imagen" />
+					</h:panelGroup>
+				</h:panelGroup>
+
+				<h:panelGroup  layout="block" style="text-align:right;">
+					<p:commandButton value="Rechazar" action="/fondos/maker/gestora.sp" styleClass="styleButton"/>
+					<p:spacer width="10"/>
+					<p:commandButton value="Aceptar" action="/conciliacion.sp" styleClass="styleButton" async="false" ajax="false"/>
+				</h:panelGroup>
+				
+			</h:panelGrid>
+				
+ 		</h:form>
+	</h:panelGroup>
+
+	<script>
+		$(document).ready(function(){
+			$(".ui-accordion-content").removeClass("ui-accordion-content")		
+		});
+	</script>
+	
+</h:body>
+</html>

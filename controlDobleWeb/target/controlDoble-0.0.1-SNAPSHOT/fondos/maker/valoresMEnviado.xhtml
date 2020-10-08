@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Gestor de Operaciones</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+
+</h:head>
+
+
+
+<h:body>
+
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu"
+			style="text-align: right;width: 545px;">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Valores Maker" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+
+		<h:form prependId="false">
+
+
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
+					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Fondo: " />
+					<p:autoComplete id="iTipoDistribucionFondo" dropdown="true" disabled="true"
+						value="#{valoresMaker.tipoDistribucionFondo}"
+						completeMethod="#{valoresMaker.getTipoDistribucionFondo}" />
+
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			
+			<p:accordionPanel multiple="true">
+				<p:tab title="Información Principal del Fondo">
+
+
+			<!-- <h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">  -->
+
+				<h:panelGrid id="panel1" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iTipoInstrumento"
+						value="Tipo de Instrumento " />
+					<p:autoComplete id="iTipoInstrumento" dropdown="true" disabled="true"
+						value="#{valoresMaker.tipoInstrumento}"
+						completeMethod="#{valoresMaker.getTipoInstrumento}" />
+						
+					<p:outputLabel for="iTipoCustodia"
+						value="Tipo de Custodia " />
+					<p:autoComplete id="iTipoCustodia" dropdown="true" disabled="true"
+						value="#{valoresMaker.tipoCustodia}"
+						completeMethod="#{valoresMaker.getTipoCustodia}" />
+					
+				</h:panelGrid>
+
+			<!-- </h:panelGroup>  -->
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel2" columns="2" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel for="iDenominacionSocial"
+						value="Denominación Social " />
+					<p:inputText id="iDenominacionSocial" disabled="true"
+						value="#{valoresMaker.denominacionSocial}" style="width:550px;" />
+						
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel3" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+
+					<p:outputLabel for="iClavePizarra" value="Clave de Pizarra " />
+					<p:inputText id="iClavePizarra" disabled="true"
+						value="#{valoresMaker.clavePizarra}" style="width:118px;" />
+
+					<p:outputLabel for="iClaveISIN" value="Clave ISIN " />
+					<p:inputText id="iClaveISIN" value="#{valoresMaker.claveISIN}" disabled="true"
+						style="width:118px;" />
+
+					<p:outputLabel for="iOperadora"
+						value="Operadora " />
+					<p:autoComplete id="iOperadora" dropdown="true" disabled="true"
+						value="#{valoresMaker.operadora}"
+						completeMethod="#{valoresMaker.getLstOperadora}" />
+						
+					<p:outputLabel for="iFechaAltaFondo"
+						value="Fecha de alta del fondo " />
+					<p:datePicker id="iFechaAltaFondo" showIcon="true" disabled="true" />
+
+					<p:outputLabel for="iMoneda" value="Moneda " />
+					<p:autoComplete id="iMoneda" dropdown="true" disabled="true"
+						value="#{valoresMaker.moneda}"
+						completeMethod="#{valoresMaker.getLstMoneda}" />
+					
+					<p:outputLabel for="iTipoSocInversion" value="Tipo de Soc.Inv. " />
+					<p:autoComplete id="iTipoSocInversion" dropdown="true" disabled="true"
+						value="#{valoresMaker.tipoSocInversion}"
+						completeMethod="#{valoresMaker.getLstTipoSocInversion}" />
+					
+					<p:outputLabel for="iTAperturaFondoCompraOperadora"
+						value="Horario de Apertura para Compra Operadora " />
+					<p:datePicker id="iTAperturaFondoCompraOperadora" showIcon="true" disabled="true" />	
+					
+					<p:outputLabel for="iHorarioCierreFondoCompraOperadora"
+						value="Horario de Cierre para Compra Operadora " />
+					<p:datePicker id="iHorarioCierreFondoCompraOperadora" showIcon="true" disabled="true" />
+
+					<p:outputLabel for="iHorarioAperturaFondoVentaOperadora"
+						value="Horario de Apertura para Venta Operadora " />
+					<p:datePicker id="iHorarioAperturaFondoVentaOperadora" showIcon="true" disabled="true" />
+
+					<p:outputLabel for="iHorarioCierreFondoVentaOperadora"
+						value="Horario de Cierre para Venta Operadora " />
+					<p:datePicker id="iHorarioCierreFondoVentaOperadora" showIcon="true" disabled="true" />
+					
+					<p:outputLabel for="iHorizonteInversion" value="Horizonte de Inversion " />
+					<p:autoComplete id="iHorizonteInversion" dropdown="true" disabled="true"
+						value="#{valoresMaker.horizonteInversion}"
+						completeMethod="#{valoresMaker.getLsthorizonteInversion}" />
+						
+					<p:outputLabel for="iCalRiesgoMercado" value="Calificación Riesgo de Mercado " />
+					<p:autoComplete id="iCalRiesgoMercado" dropdown="true" disabled="true"
+						value="#{valoresMaker.calRiesgoMercado}"
+						completeMethod="#{valoresMaker.getLstCalRiesgoMercado}" />
+						
+					<p:outputLabel for="iCalRiesgoCredito" value="Calificación Riesgo de Credito " />
+					<p:autoComplete id="iCalRiesgoCredito" dropdown="true" disabled="true"
+						value="#{valoresMaker.calRiesgoCredito}"
+						completeMethod="#{valoresMaker.getLstCalRiesgoCredito}" />
+
+					<p:outputLabel for="iFondoEjecucion"
+						value="Fondo ejecución " />
+					<p:datePicker id="iFondoEjecucion" showIcon="true" disabled="true" />
+					
+					<p:outputLabel for="iDia"
+						value="Dia " />
+					<p:datePicker id="iDia" showIcon="true" disabled="true" />
+					
+					<p:outputLabel for="iFondoLiquidacion"
+						value="Fondo liquidación " />
+					<p:datePicker id="iFondoLiquidacion" showIcon="true" disabled="true" />
+					
+					<p:outputLabel for="iMntMinInversion"
+						value="Monto mínimo de Inversión " />
+					<p:inputText id="iMntMinInversion" disabled="true"
+						value="#{valoresMaker.mntMinInversion}" style="width:118px;" />
+						
+					<p:outputLabel for="iPlazoMinPermanencia"
+						value="Plazo mínimo de permanencia " />
+					<p:inputText id="iPlazoMinPermanencia" disabled="true"
+						value="#{valoresMaker.plazoMinPermanencia}" style="width:118px;" />
+						
+					<p:outputLabel for="iPorcentajeMaxTenencia"
+						value="% Máximo de Tenencia " />
+					<p:inputText id="iPorcentajeMaxTenencia" disabled="true"
+						value="#{valoresMaker.porcentajeMaxTenencia}" style="width:118px;" />
+
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			
+			</p:tab>
+		    
+			
+			<p:tab title="Clases Accionarias ">
+			
+			
+			<!-- <p:outputLabel for="iNombreClase"
+						value="Clases Accionarias " />
+			<p:commandButton icon="pi pi-plus"  update="output" />
+    		<p:commandButton icon="pi pi-minus" update="output" /> -->
+    		
+    		<p:outputPanel id="output">
+			
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel4" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel for="iNombreClase"
+						value="Nombre de la clase " />
+					<p:inputText id="iNombreClase" disabled="true"
+						value="#{valoresMaker.nombreClase}" style="width:118px;" />
+						
+					<p:outputLabel for="iNumSeries"
+						value="Número de series " />
+					<p:inputText id="iNumSeries" disabled="true"
+						value="#{valoresMaker.numSeries}" style="width:118px;" />
+						
+					<p:outputLabel for="iTipPerOperarClase"
+						value="Tipo de Personas que puede operar la clase " />
+					<p:autoComplete id="iTipPerOperarClase" dropdown="true" disabled="true"
+						value="#{valoresMaker.tipPerOperarClase}"
+						completeMethod="#{valoresMaker.getLstTipPerOperarClase}" />
+						
+					<p:outputLabel for="iComClienteIncumpMinPermanencia"
+						value="Comisión Cliente por Incumplimiento plazo mínimo de permanencia " />
+					<p:inputText id="iComClienteIncumpMinPermanencia" disabled="true"
+						value="#{valoresMaker.comClienteIncumpMinPermanencia}" style="width:118px;" />
+						
+					<p:outputLabel for="iComClienteIncumpMinInversion"
+						value="Comisión Cliente por Incumplimiento saldo mínimo de inversión " />
+					<p:inputText id="iComClienteIncumpMinInversion" disabled="true"
+						value="#{valoresMaker.comClienteIncumpMinInversion}" style="width:118px;" />
+						
+					<p:outputLabel for="iComClienteCompraAcciones"
+						value="Comisión Cliente por Compra de acciones " />
+					<p:inputText id="iComClienteCompraAcciones" disabled="true"
+						value="#{valoresMaker.comClienteCompraAcciones}" style="width:118px;" />
+					
+					<p:outputLabel for="iComClienteVentaAcciones"
+						value="Comisión Cliente por Venta de acciones " />
+					<p:inputText id="iComClienteVentaAcciones" disabled="true"
+						value="#{valoresMaker.comClienteVentaAcciones}" style="width:118px;" />
+						
+					<p:outputLabel for="iComClienteServicioAsesoria"
+						value="Comisión Cliente por Servicio por asesoría " />
+					<p:inputText id="iComClienteServicioAsesoria" disabled="true"
+						value="#{valoresMaker.comClienteServicioAsesoria}" style="width:118px;" />
+						
+					<p:outputLabel for="iComClienteServicioAdmAcciones"
+						value="Comisión Cliente por Servicio de administración de acciones " />
+					<p:inputText id="iComClienteServicioAdmAcciones" disabled="true"
+						value="#{valoresMaker.comClienteServicioAdmAcciones}" style="width:118px;" />
+						
+					<p:outputLabel for="iComFondoAdmActivos"
+						value="Comisión Fondo por Administración de activos " />
+					<p:inputText id="iComFondoAdmActivos" disabled="true"
+						value="#{valoresMaker.comFondoAdmActivos}" style="width:118px;" />
+						
+					<p:outputLabel for="iComFondoOtras"
+						value="Comisión Fondo Otras " />
+					<p:inputText id="iComFondoOtras" disabled="true"
+						value="#{valoresMaker.comFondoOtras}" style="width:118px;" />
+					
+					<p:outputLabel value=""/>
+					<p:outputLabel value=""/>
+					<p:outputLabel value=""/>
+					<p:outputLabel value=""/>
+					
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="">
+					
+					<h:panelGroup layout="block">
+					
+						<!-- <p:linkButton  value="Agregar" style="background:#041E42;color:#fff;font-size:16px;text-shadow:none;border-radius:1px;"/>  -->
+							<p:outputLabel/>
+							<p:outputLabel value=""/>
+					</h:panelGroup>
+					
+				</h:panelGroup>
+			
+			</p:outputPanel>
+			
+			</p:tab>
+			</p:accordionPanel>
+			
+			<h:panelGrid columns="2" styleClass="">
+
+				<h:panelGroup layout="block" 
+					style="text-align: left;width: 845px;">
+		
+					<h:panelGroup layout="block" styleClass="">
+						<img src="../../resources/images/altaFondo/valoresMakerDisable.png" width="360"
+    		 				height="64" alt="imagen" />
+					</h:panelGroup>
+		
+				</h:panelGroup>
+		
+				<h:panelGroup layout="block" styleClass="">
+		
+					
+		
+				</h:panelGroup>
+		
+			</h:panelGrid>
+			
+			
+
+		</h:form>
+
+	</h:panelGroup>
+
+	<h:panelGroup layout="block" styleClass="footer-info">
+		<br />
+		<h:outputText value="Software By Soporte Producción Actinver. 2020 ©" />
+	</h:panelGroup>
+
+</h:body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      	 
+	<h:head>
+	
+		<link rel="shortcut icon" href="resources/images/favicon.ico" />
+	
+		<title>Control Doble</title>
+	    
+	    <h:outputStylesheet library="css" name="primeicons.css"/>
+		<h:outputStylesheet library="css" name="gestorOperaciones.css"/>
+	
+	</h:head>
+	
+	<h:body>
+	
+		<h:panelGrid columns="2" styleClass="header-wrapper">
+			
+			<h:panelGroup layout="block" styleClass="header-menu">
+			
+				<h:panelGroup layout="block">
+					<h:outputLabel value="Control Doble" style="font-size:24px;"/>	
+				</h:panelGroup>	
+				
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="header-info-table">
+			
+		    	<h:panelGroup layout="block">
+					<h:outputLabel value="Actinver" style="font-size:32px;"/>	
+				</h:panelGroup>
+				
+			</h:panelGroup>
+			
+		</h:panelGrid>
+		
+		<h:panelGroup layout="block" styleClass="body-wrapper">
+			
+				<h:form prependId="false">
+				
+					<h:panelGroup layout="block" style="margin: 50px 0;">
+					
+						<h:panelGrid id="panel" columns="2" style="margin: 0 auto;text-align:center;">
+						
+						 	<p:focus context="panel"/>
+						
+							<p:inputText id="iUser" value="#{login.usr.usuario}" style="width:118px;"/>
+							<p:watermark id="wUser" for="iUser" value="Usuario"/>
+							
+							<p:password id="pPass" value="#{login.usr.contrasenia}" style="width:118px;"/>
+							<p:watermark id="wPass" for="pPass" value="Contraseña"/>
+							
+							<p:messages id="messages" showDetail="true" closable="true">
+						        <p:autoUpdate/>
+						    </p:messages>
+						    <p:outputLabel value=""/>
+						    
+							<p:commandButton value="Entrar" action="#{login.autenticar}" async="true" style="background:#041E42;color:#fff;font-size:16px;text-shadow:none;border-radius:1px;"/><p:outputLabel/>
+							<p:outputLabel value=""/>
+							
+						</h:panelGrid>
+						
+					</h:panelGroup>
+				
+				</h:form>
+				
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="footer-info">
+				<br/> 
+			    <h:outputText value="Software By Soporte Producción Actinver. 2020 ©"/>
+	    	</h:panelGroup>
+		
+	</h:body>
+	
+</html>

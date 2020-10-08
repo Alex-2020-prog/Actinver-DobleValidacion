@@ -1,0 +1,154 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	
+  <display-name>controlDobleWeb</display-name>
+  
+  <distributable/>
+  
+  <welcome-file-list>
+    <welcome-file>index.sp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.sp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+    <enabled>true</enabled>
+    <async-supported>false</async-supported>
+  </servlet>
+  
+  <session-config>
+    <session-timeout>300</session-timeout>
+  </session-config>
+ 
+ <context-param>
+    <param-name>primefaces.TRANSFORM_METADATA</param-name>
+    <param-value>true</param-value>
+</context-param> 
+ <context-param>
+    <param-name>primefaces.CLIENT_SIDE_VALIDATION</param-name>
+    <param-value>true</param-value>
+ </context-param>
+ <context-param>
+    <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    <param-value>server</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>resources.application</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.SERIALIZE_STATE_IN_SESSION</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
+    <param-value>300</param-value>
+  </context-param>
+  <context-param>
+    <param-name>com.ibm.ws.jsf.JSP_UPDATE_CHECK</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>com.ibm.ws.jsf.LOAD_FACES_CONFIG_AT_STARTUP</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.CONFIG_FILES</param-name>
+    <param-value>/WEB-INF/META-INF/faces-config.xml
+   </param-value>
+  </context-param>
+  
+  
+  <error-page>
+    <error-code>500</error-code>
+    <location>/index.sp</location>
+  </error-page>
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/index.sp</location>
+  </error-page>
+  
+  <error-page>
+    <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+    <location>/index.sp</location>
+  </error-page>
+  
+  <listener>
+    <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+  </listener>
+  
+  <!--
+  <login-config>
+	 	<auth-method>FORM</auth-method>
+	  <form-login-config>
+	  	<form-login-page>/index.sp</form-login-page>
+	  	<form-error-page>/index.sp</form-error-page>
+	  </form-login-config>
+  </login-config> 
+  
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>admin-area</web-resource-name>
+        <url-pattern>/fondos/administracion/*</url-pattern>
+        <http-method>PUT</http-method>
+        <http-method>DELETE</http-method>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>checker-area</web-resource-name>
+        <url-pattern>/fondos/checker/*</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+        <role-name>checker</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>maker-area</web-resource-name>
+        <url-pattern>/fondos/maker/*</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+        <role-name>maker</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  	<security-role>
+	    <role-name>admin</role-name>
+	</security-role>
+	<security-role>
+	    <role-name>checker</role-name>
+	</security-role>
+	<security-role>
+	    <role-name>maker</role-name>
+	</security-role>
+   -->
+</web-app>

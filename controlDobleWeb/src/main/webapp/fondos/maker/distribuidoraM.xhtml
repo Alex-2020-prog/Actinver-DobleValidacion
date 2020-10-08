@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<link rel="shortcut icon" href="resources/images/favicon.ico" />
+
+	<title>Gestor de Operaciones</title>
+
+	<h:outputStylesheet library="css" name="primeicons.css" />
+	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
+
+</h:head>
+
+
+
+<h:body>
+
+	<h:panelGrid columns="2" styleClass="header-wrapper">
+
+		<h:panelGroup layout="block" styleClass="header-menu"
+			style="text-align: right;width: 545px;">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Distribución Maker" style="font-size:24px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" styleClass="header-info-table">
+
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			</h:panelGroup>
+
+		</h:panelGroup>
+
+	</h:panelGrid>
+
+	<h:panelGroup layout="block" styleClass="body-wrapper">
+
+		<h:form prependId="false">
+
+			<h:panelGroup layout="block"
+				style="width:980px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
+					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iDistribucionFondo" value="Distribución de Fondo: " />
+					<p:autoComplete id="iDistribucionFondo" dropdown="true"
+						value="#{distribucionMaker.distribucionFondo}"
+						completeMethod="#{distribucionMaker.getDistribucionFondo}" />
+
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			<p:accordionPanel multiple="true">
+				<p:tab title="Información Principal del Fondo">
+
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:white;position: relative;">
+
+				<h:panelGrid id="panel1" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+
+					<p:outputLabel for="iClavePizarra" value="Clave de Pizarra " />
+					<p:inputText id="iClavePizarra" disabled="true"
+						value="#{distribucionMaker.clavePizarra}" style="width:118px;" />
+
+					<p:outputLabel for="iOperadora"
+						value="Operadora " />
+					<p:autoComplete id="iOperadora" dropdown="true" disabled="true"
+						value="#{distribucionMaker.operadora}"
+						completeMethod="#{distribucionMaker.getLstOperadora}" />
+						
+					<p:outputLabel for="iTipoSocInversion" value="Tipo de Soc.Inv. " />
+					<p:autoComplete id="iTipoSocInversion" dropdown="true" disabled="true"
+						value="#{distribucionMaker.tipoSocInversion}"
+						completeMethod="#{distribucionMaker.getLstTipoSocInversion}" />
+						
+					<p:outputLabel for="iMoneda" value="Moneda " />
+					<p:autoComplete id="iMoneda" dropdown="true" disabled="true"
+						value="#{distribucionMaker.moneda}"
+						completeMethod="#{distribucionMaker.getLstMoneda}" />
+					
+					<p:outputLabel for="iPerfilInversion" value="Perfil de Inversión " />
+					<p:autoComplete id="iPerfilInversion" dropdown="true"
+						value="#{distribucionMaker.perfilInversion}"
+						completeMethod="#{distribucionMaker.getLstPerfilInversion}" />
+						
+					<p:outputLabel for="iCompraCantidad" value="Compra por Cantidad " />
+					<p:inputText id="iCompraCantidad" disabled="true"
+						value="#{distribucionMaker.compraCantidad}" style="width:118px;" />
+					
+					<p:outputLabel for="iCompraMonto" value="Compra por Monto " />
+					<p:inputText id="iCompraMonto" disabled="true"
+						value="#{distribucionMaker.compraMonto}" style="width:118px;" />
+						
+					<p:outputLabel for="iVentaCantidad" value="Venta por Cantidad " />
+					<p:inputText id="iVentaCantidad" disabled="true"
+						value="#{distribucionMaker.ventaCantidad}" style="width:118px;" />
+					
+					<p:outputLabel for="iVentaMonto" value="Venta por Monto " />
+					<p:inputText id="iVentaMonto" disabled="true"
+						value="#{distribucionMaker.ventaMonto}" style="width:118px;" />
+						
+					<p:outputLabel for="iFondoPension" value="Fondo Pensión " />
+					<p:inputText id="iFondoPension" disabled="true"
+						value="#{distribucionMaker.fondoPension}" style="width:118px;" />	
+					
+					<p:outputLabel for="iCalendarios" value="Calendarios " />
+					<p:autoComplete id="iCalendarios" dropdown="true"
+						value="#{distribucionMaker.calendarios}"
+						completeMethod="#{distribucionMaker.getLstCalendarios}" />
+					
+					<p:outputLabel for="iPlan176" value="Plan 176 " />
+					<p:inputText id="iPlan176" disabled="true"
+						value="#{distribucionMaker.plan176}" style="width:118px;" />
+						
+					<p:outputLabel for="iPlan218" value="Plan 218 " />
+					<p:inputText id="iPlan218" disabled="true"
+						value="#{distribucionMaker.plan218}" style="width:118px;" />
+						
+					<p:outputLabel for="iFonXCon" value="Fon x Con " />
+					<p:inputText id="iFonXCon" disabled="true"
+						value="#{distribucionMaker.fonXCon}" style="width:118px;" />
+						
+					<p:outputLabel for="iFonDeCon" value="Fon de Fon " />
+					<p:inputText id="iFonDeCon" disabled="true"
+						value="#{distribucionMaker.fonDeCon}" style="width:118px;" />
+					
+					<p:outputLabel for="iPermanencia" value="Permanencia " />
+					<p:inputText id="iPermanencia" disabled="true"
+						value="#{distribucionMaker.permanencia}" style="width:118px;" />
+						
+					<p:outputLabel for="iImporteMin" value="Importe Min. " />
+					<p:inputText id="iImporteMin" disabled="true"
+						value="#{distribucionMaker.importeMin}" style="width:118px;" />
+						
+					<p:outputLabel for="iFuentePrecio"
+						value="Fuente de precios " />
+					<p:inputText id="iFuentePrecio"
+						value="#{distribucionMaker.fuentePrecio}" style="width:118px;" />
+					
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			<p:tab title="Acciones Cantidad Autorizada ">
+						
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel2" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel for="iAccionesCantidadAutorizada"
+						value="Acciones Cantidad Autorizada " />
+					<p:inputText id="iAccionesCantidadAutorizada"
+						value="#{distribucionMaker.accionesCantidadAutorizada}" style="width:118px;" />
+						
+					<p:outputLabel for="iAccionesValorNominal"
+						value="Acciones Valor Nominal " />
+					<p:inputText id="iAccionesValorNominal"
+						value="#{distribucionMaker.accionesValorNominal}" style="width:118px;" />
+						
+					<p:outputLabel for="iFactorRecompra"
+						value="Factor de Recompra " />
+					<p:inputText id="iFactorRecompra"
+						value="#{distribucionMaker.factorRecompra}" style="width:118px;" />
+							
+					<p:outputLabel for="iTipoFactorRecompra"
+						value="Tipo de Factor de Recompra " />
+					<p:inputText id="iTipoFactorRecompra"
+						value="#{distribucionMaker.tipoFactorRecompra}" style="width:118px;" />
+						
+					<p:outputLabel for="iDeltaRecompra"
+						value="Delta de Recompra " />
+					<p:inputText id="iDeltaRecompra"
+						value="#{distribucionMaker.deltaRecompra}" style="width:118px;" />
+					
+					<p:outputLabel for="iMaxInversionContrato"
+						value="Máximo de Inversión por Contrato " />
+					<p:inputText id="iMaxInversionContrato"
+						value="#{distribucionMaker.maxInversionContrato}" style="width:118px;" />
+					
+					<p:outputLabel for="iStockMinimo"
+						value="Stock Mínimo " />
+					<p:inputText id="iStockMinimo"
+						value="#{distribucionMaker.stockMinimo}" style="width:118px;" />
+					
+					<p:outputLabel for="iTipoAlarma"
+						value="Tipo de Alarma " />
+					<p:inputText id="iTipoAlarma"
+						value="#{distribucionMaker.tipoAlarma}" style="width:118px;" />
+						
+					<p:outputLabel for="iCertificacion"
+						value="Certificación " />
+					<p:inputText id="iCertificacion"
+						value="#{distribucionMaker.certificacion}" style="width:118px;" />
+						
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab> 
+			
+			
+			<p:tab title="Sección manejo de Multiseries ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel3" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iNombreClase"
+						value="Nombre de la clase " />
+					<p:inputText id="iNombreClase"
+						value="#{distribucionMaker.nombreClase}" style="width:118px;" />
+						
+					<p:outputLabel for="iSeries"
+						value="Series " />
+					<p:inputText id="iSeries"
+						value="#{distribucionMaker.series}" style="width:118px;" />
+						
+					<p:outputLabel for="iNombreSerie"
+						value="Nombre de la serie " />
+					<p:inputText id="iNombreSerie"
+						value="#{distribucionMaker.nombreSeries}" style="width:118px;" />
+						
+					<p:outputLabel for="iMontoMinimo"
+						value="Monto mínimo " />
+					<p:inputText id="iMontoMinimo"
+						value="#{distribucionMaker.montoMinimo}" style="width:118px;" />
+						
+					<p:outputLabel for="iMontoMaximo"
+						value="Monto máximo " />
+					<p:inputText id="iMontoMaximo"
+						value="#{distribucionMaker.montoMaximo}" style="width:118px;" />
+						
+					<p:outputLabel for="iSeriePrimeraInversion"
+						value="Serie de primimera inversión " />
+					<p:inputText id="iSeriePrimeraInversion"
+						value="#{distribucionMaker.seriePrimeraInversion}" style="width:118px;" />
+						
+					<p:outputLabel for="iSerieFija"
+						value="Serie fija " />
+					<p:inputText id="iSerieFija"
+						value="#{distribucionMaker.serieFija}" style="width:118px;" />
+						
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			
+			<p:tab title="Distribución incluye casa de bolsa ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel4" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+
+					<p:outputLabel for="iCuentas"
+						value="Cuentas " />
+					<p:inputText id="iCuentas"
+						value="#{distribucionMaker.cuentas}" style="width:118px;" />
+						
+					<p:outputLabel for="iCartera"
+						value="Cartera " />
+					<p:inputText id="iCartera"
+						value="#{distribucionMaker.cartera}" style="width:118px;" />
+						
+					<p:outputLabel for="iProveedora"
+						value="Proveedora " />
+					<p:inputText id="iProveedora"
+						value="#{distribucionMaker.proveedora}" style="width:118px;" />
+						
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			<p:tab title="Sección Forma de Operación/Liquidación ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel5" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+					
+					<p:outputLabel for="iCompraAnticipa"
+						value="Compra Anticipa " />
+					<p:inputText id="iCompraAnticipa"
+						value="#{distribucionMaker.compraAnticipa}" style="width:118px;" />
+						
+					<p:outputLabel for="iCompraOpera"
+						value="Compra Opera " />
+					<p:inputText id="iCompraOpera"
+						value="#{distribucionMaker.compraOpera}" style="width:118px;" />
+						
+					<p:outputLabel for="iCompraLiquida"
+						value="Compra Liquida " />
+					<p:inputText id="iCompraLiquida"
+						value="#{distribucionMaker.compraLiquida}" style="width:118px;" />
+						
+					<p:outputLabel for="iVentaAnticipa"
+						value="Venta Anticipa " />
+					<p:inputText id="iVentaAnticipa"
+						value="#{distribucionMaker.ventaAnticipa}" style="width:118px;" />
+						
+					<p:outputLabel for="iVentaOpera"
+						value="Venta Opera " />
+					<p:inputText id="iVentaOpera"
+						value="#{distribucionMaker.ventaOpera}" style="width:118px;" />	
+						
+					<p:outputLabel for="iVentaLiquida"
+						value="Venta Liquida " />
+					<p:inputText id="iVentaLiquida"
+						value="#{distribucionMaker.ventaLiquida}" style="width:118px;" />
+						
+			</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			<p:tab title="Parámetros Especiales ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel6" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">	
+						
+					<p:outputLabel for="iProcesoEsp"
+						value="Proceso Esp. " />
+					<p:inputText id="iProcesoEsp"
+						value="#{distribucionMaker.procesoEsp}" style="width:118px;" />
+						
+					<p:outputLabel for="iFechaIni"
+						value="Fecha Ini " />
+					<p:datePicker id="iFechaIni" showIcon="true" />
+						
+					<p:outputLabel for="iFechaFin"
+						value="Fecha Fin " />
+					<p:datePicker id="iFechaFin" showIcon="true" />
+			
+			</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			<p:tab title="Rebalanceos ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel7" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">	
+						
+					<p:outputLabel for="iPermiteReb"
+						value="Permite Reb " />
+					<p:inputText id="iPermiteReb"
+						value="#{distribucionMaker.permiteReb}" style="width:118px;" />
+						
+					<p:outputLabel for="iPorLibreFondoDestino"
+						value="% Libre fondo destino " />
+					<p:inputText id="iPorLibreFondoDestino"
+						value="#{distribucionMaker.porLibreFondoDestino}" style="width:118px;" />
+					
+					<p:outputLabel for="iPorCompraRebalanceo"
+						value="% Compra rebalanceo " />
+					<p:inputText id="iPorCompraRebalanceo"
+						value="#{distribucionMaker.porCompraRebalanceo}" style="width:118px;" />
+						
+				
+				</h:panelGrid>
+			</h:panelGroup>
+			
+			</p:tab>
+			
+			<p:tab title="Liquidación Indeval ">
+			
+			<h:panelGroup layout="block"
+				style="width:940px;margin:0 auto;background:#efefef;position: relative;padding: 1px;">
+
+				<h:panelGrid id="panel8" columns="4" layout="flex"
+					style="width:940px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">	
+						
+					<p:outputLabel for="iCtaActinver"
+						value="Cta. Actinver " />
+					<p:inputText id="iCtaActinver"
+						value="#{distribucionMaker.ctaActinver}" style="width:118px;" />
+						
+					<p:outputLabel for="iCtaIndeval"
+						value="Cta. Indeval " />
+					<p:inputText id="iCtaIndeval"
+						value="#{distribucionMaker.ctaIndeval}" style="width:118px;" />
+						
+					<p:outputLabel for="iFondoEspecial"
+						value="Fondo Especial " />
+					<p:inputText id="iFondoEspecial"
+						value="#{distribucionMaker.fondoEspecial}" style="width:118px;" />
+					
+				</h:panelGrid>
+
+			</h:panelGroup>
+			
+			</p:tab>
+			</p:accordionPanel>
+			
+			
+			<h:panelGrid columns="2" styleClass="">
+
+				<h:panelGroup layout="block" 
+					style="text-align: left;width: 845px;">
+		
+					<h:panelGroup layout="block" styleClass="">
+						<img src="../../resources/images/altaFondo/distribucionMakerDisable.png" width="360"
+    		 				height="64" alt="imagen" />
+					</h:panelGroup>
+		
+				</h:panelGroup>
+		
+				<h:panelGroup layout="block">
+					<p:commandButton value="Continuar" action="/fondos/checker/distribuidoraCDisable.sp" ajax="false" class="styleButton"/><p:outputLabel/>
+					<p:outputLabel value=""/>
+				</h:panelGroup>
+			
+			</h:panelGrid>
+			
+			
+
+		</h:form>
+
+	</h:panelGroup>
+
+	<h:panelGroup layout="block" styleClass="footer-info">
+		<br />
+		<h:outputText value="Software By Soporte Producción Actinver. 2020 ©" />
+	</h:panelGroup>
+
+</h:body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <context-root>controlDobleWeb</context-root>
+    
+    <max-active-sessions>100</max-active-sessions>
+
+     <replication-config>
+        <replication-trigger>SET_AND_NON_PRIMITIVE_GET</replication-trigger>
+        <replication-granularity>SESSION</replication-granularity>
+    </replication-config>
+
+    <enable-websockets>true</enable-websockets>
+    
+</jboss-web>

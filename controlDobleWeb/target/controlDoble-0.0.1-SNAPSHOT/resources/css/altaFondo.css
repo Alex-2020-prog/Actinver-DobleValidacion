@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+/*Estilo para la plantilla*/
+
+.button-fondo-wrapper {width:180px;margin:0 auto;color:white;height:50px;}
+
+.proceso-vm-fondo-wrapper {background-image: url("../resources/images/altaFondo/procesoVMFondo.png");background-repeat:no-repeat;background-position:top;height:580px;}
+
+.login-wrapper-test {background-image: url("../resources/images/chavosactitud.png");background-repeat:no-repeat;background-position:top;height:580px;}
