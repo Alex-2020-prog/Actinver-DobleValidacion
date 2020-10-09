@@ -418,26 +418,20 @@
 			</p:accordionPanel>
 			
 			
-			<h:panelGrid columns="2" styleClass="">
-
-				<h:panelGroup layout="block" 
-					style="text-align: left;width: 845px;">
-		
-					<h:panelGroup layout="block" styleClass="">
-						<img src="../../resources/images/altaFondo/distribucionMakerDisable.png" width="360"
-    		 				height="64" alt="imagen" />
-					</h:panelGroup>
-		
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGroup layout="block" style="width:50%;text-align: left;">
+	
+					<img src="../../resources/images/altaFondo/AD-DistribucionMkr.JPG" width="360"
+   		 				height="64" alt="imagen" />		
 				</h:panelGroup>
 		
-				<h:panelGroup layout="block">
-					<p:commandButton value="Continuar" action="/fondos/checker/distribuidoraCDisable.sp" ajax="false" class="styleButton"/><p:outputLabel/>
-					<p:outputLabel value=""/>
+				<h:panelGroup layout="block" style="text-align:right;">
+					<p:commandButton value="Guardar" action="save" styleClass="styleButton"/>
+					<p:spacer width="10"/>
+					<p:commandButton value="Continuar" action="/fondos/checker/distribuidoraCDisable.sp" ajax="false" class="styleButton"/>
 				</h:panelGroup>
 			
 			</h:panelGrid>
-			
-			
 
 		</h:form>
 
