@@ -36,9 +36,9 @@ public class LoginBean implements Serializable {
 					if(usr.getUsuario().equalsIgnoreCase("Admin")) 
 						vista = "/fondos/administracion/propiedadesGenerales.xhtml";
 					else if(usr.getUsuario().equalsIgnoreCase("Maker")) 
-						vista = "/fondos/maker/valoresM.xhtml";
+						vista = "/fondos/maker/contratos.xhtml";
 					else if(usr.getUsuario().equalsIgnoreCase("Checker")) 
-						vista = "/fondos/checker/valoresCEdit.xhtml";
+						vista = "/fondos/checker/contratosChk.xhtml";
 					else
 						vista = "index.sp";
 

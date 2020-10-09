@@ -12,7 +12,7 @@
 
 	<h:outputStylesheet library="css" name="primeicons.css" />
 	<h:outputStylesheet library="css" name="gestorOperaciones.css" />
-	
+
 </h:head>
 
 <h:body>
@@ -30,20 +30,20 @@
 	<br/>
 	<h:form styleClass="body-wrapper">
 	
-		<p:panelGrid id="pnlFilter">
-			<p:column style="border:hidden;">
+		<p:panelGrid>
+			<p:column style="border-style:none;">
 				<p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
 			</p:column>
-			<p:column style="border:hidden;">
+			<p:column style="border-style:none;">
 				<p:selectOneMenu id="TipoFdo" style="width:150px;">
 					<f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
 					<f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
 				</p:selectOneMenu>				
 			</p:column>
-			<p:column style="border:hidden;">
+			<p:column style="border-style:none;">
 				<p:outputLabel for="TipoCustodia" value="Tipo de Custodia:" />
 			</p:column>
-			<p:column style="border:hidden;">
+			<p:column style="border-style:none;">
 				<p:selectOneMenu id="TipoCustodia" style="width:150px;">
 					<f:selectItem itemLabel="Custodia Interna" itemValue="propia" />
 					<f:selectItem itemLabel="Custodia Externa" itemValue="externa" />

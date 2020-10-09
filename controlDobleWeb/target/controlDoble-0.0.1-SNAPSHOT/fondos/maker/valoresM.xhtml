@@ -89,22 +89,16 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 
 		<h:form prependId="false">
 
-			<h:panelGroup layout="block"
-				style="width:980px;margin:0 auto;background:white;position: relative;">
+			<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
+				style="border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
 
-				<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
-					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+				<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Custodia " />
+				<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
+					value="#{valoresMaker.tipoCustodia}" required="true"
+					completeMethod="#{valoresMaker.getLstTipoCustodia}" />
 
-					<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Custodia " />
-					<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
-						value="#{valoresMaker.tipoCustodia}"
-						completeMethod="#{valoresMaker.getLstTipoCustodia}" />
+			</h:panelGrid>
 
-				</h:panelGrid>
-
-			</h:panelGroup>
-
-			
 			<p:accordionPanel multiple="true">
 				<p:tab title="Información Principal del Fondo">
  				<h:panelGroup layout="block"
@@ -114,7 +108,7 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 						style="width:auto;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
 						<p:outputLabel for="iDenominacionSocial"
 							value="Denominación Social " />
-						<p:inputText id="iDenominacionSocial"
+						<p:inputText id="iDenominacionSocial" required="true"
 							value="#{valoresMaker.denominacionSocial}" style="width:550px;" />
 							
 					</h:panelGrid>
@@ -129,90 +123,82 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 
 
 					<p:outputLabel for="iClavePizarra" value="Clave de Pizarra " />
-					<p:inputText id="iClavePizarra"
+					<p:inputText id="iClavePizarra" required="true"
 						value="#{valoresMaker.clavePizarra}" style="width:118px;" />
 
 					<p:outputLabel for="iClaveISIN" value="Clave ISIN " />
-					<p:inputText id="iClaveISIN" value="#{valoresMaker.claveISIN}"
+					<p:inputText id="iClaveISIN" value="#{valoresMaker.claveISIN}" required="true"
 						style="width:118px;" />
 
 					<p:outputLabel for="iOperadora"
 						value="Operadora " />
 					<p:autoComplete id="iOperadora" dropdown="true"
-						value="#{valoresMaker.operadora}"
+						value="#{valoresMaker.operadora}" required="true"
 						completeMethod="#{valoresMaker.getLstOperadora}" />
 						
-					<p:outputLabel for="iFechaAltaFondo"
-						value="Fecha de alta del fondo " />
-					<p:datePicker id="iFechaAltaFondo" value="#{valoresMaker.fechaAltaFondo}" showIcon="true" pattern="dd/MM/yyyy"/>
+					<p:outputLabel for="@next" value="Fecha de alta del fondo " />
+					<p:calendar id="iFechaAltaFondo" value="#{valoresMaker.fechaAltaFondo}" showOn="button" pattern="dd/MM/yyyy" required="true"/>
 
 					<p:outputLabel for="iMoneda" value="Moneda " />
 					<p:autoComplete id="iMoneda" dropdown="true"
-						value="#{valoresMaker.moneda}"
+						value="#{valoresMaker.moneda}" required="true"
 						completeMethod="#{valoresMaker.getLstMoneda}" />
 					
 					<p:outputLabel for="iTipoSocInversion" value="Tipo de Soc.Inv. " />
 					<p:autoComplete id="iTipoSocInversion" dropdown="true"
-						value="#{valoresMaker.tipoSocInversion}"
+						value="#{valoresMaker.tipoSocInversion}" required="true"
 						completeMethod="#{valoresMaker.getLstTipoSocInversion}" />
 					
-					<p:outputLabel for="iTAperturaFondoCompraOperadora"
-						value="Horario de Apertura para Compra Operadora " />
-					<p:datePicker id="iTAperturaFondoCompraOperadora" showIcon="true"/>	
+					<p:outputLabel for="@next" value="Horario de Apertura para Compra Operadora " />
+					<p:calendar id="iTAperturaFondoCompraOperadora" value="#{valoresMaker.horarioAperturaFondoCompraOperadora}" pattern="HH:mm" timeOnly="true" required="true"/>	
 					
-					<p:outputLabel for="iHorarioCierreFondoCompraOperadora"
-						value="Horario de Cierre para Compra Operadora " />
-					<p:datePicker id="iHorarioCierreFondoCompraOperadora" showIcon="true"/>
+					<p:outputLabel for="@next" value="Horario de Cierre para Compra Operadora " />
+					<p:calendar id="iHorarioCierreFondoCompraOperadora" value="#{valoresMaker.horarioCierreFondoCompraOperadora}" pattern="HH:mm" timeOnly="true" required="true"/>
 
-					<p:outputLabel for="iHorarioAperturaFondoVentaOperadora"
-						value="Horario de Apertura para Venta Operadora " />
-					<p:datePicker id="iHorarioAperturaFondoVentaOperadora" showIcon="true" />
+					<p:outputLabel for="@next" value="Horario de Apertura para Venta Operadora " />
+					<p:calendar id="iHorarioAperturaFondoVentaOperadora" value="#{valoresMaker.horarioAperturaFondoVentaOperadora}" pattern="HH:mm" timeOnly="true" required="true"/>
 
-					<p:outputLabel for="iHorarioCierreFondoVentaOperadora"
-						value="Horario de Cierre para Venta Operadora " />
-					<p:datePicker id="iHorarioCierreFondoVentaOperadora" showIcon="true" />
+					<p:outputLabel for="@next" value="Horario de Cierre para Venta Operadora " />
+					<p:calendar id="iHorarioCierreFondoVentaOperadora" value="#{valoresMaker.horarioCierreFondoVentaOperadora}" pattern="HH:mm" timeOnly="true" required="true"/>
 					
 					<p:outputLabel for="iHorizonteInversion" value="Horizonte de Inversion " />
-					<p:autoComplete id="iHorizonteInversion" dropdown="true"
+					<p:autoComplete id="iHorizonteInversion" dropdown="true" required="true"
 						value="#{valoresMaker.horizonteInversion}"
 						completeMethod="#{valoresMaker.getLsthorizonteInversion}" />
 						
 					<p:outputLabel for="iCalRiesgoMercado" value="Calificación Riesgo de Mercado " />
-					<p:autoComplete id="iCalRiesgoMercado" dropdown="true"
+					<p:autoComplete id="iCalRiesgoMercado" dropdown="true" required="true"
 						value="#{valoresMaker.calRiesgoMercado}"
 						completeMethod="#{valoresMaker.getLstCalRiesgoMercado}" />
 						
 					<p:outputLabel for="iCalRiesgoCredito" value="Calificación Riesgo de Credito " />
-					<p:autoComplete id="iCalRiesgoCredito" dropdown="true"
+					<p:autoComplete id="iCalRiesgoCredito" dropdown="true" required="true"
 						value="#{valoresMaker.calRiesgoCredito}"
 						completeMethod="#{valoresMaker.getLstCalRiesgoCredito}" />
 
-					<p:outputLabel for="iFondoEjecucion"
-						value="Fondo ejecución " />
-					<p:datePicker id="iFondoEjecucion" showIcon="true" />
+					<p:outputLabel for="@next" value="Fondo ejecución " />
+					<p:calendar id="iFondoEjecucion" value="#{valoresMaker.fondoEjecucion}" showOn="button" pattern="dd/MM/yyyy" required="true"/>
 					
-					<p:outputLabel for="iDia"
-						value="Dia " />
-					<p:datePicker id="iDia" showIcon="true" />
+					<p:outputLabel for="iDia" value="Dia " />
+					<p:calendar id="iDia" value="#{valoresMaker.dia}" showOn="button" pattern="dd/MM/yyyy" required="true" />
 					
-					<p:outputLabel for="iFondoLiquidacion"
-						value="Fondo liquidación " />
-					<p:datePicker id="iFondoLiquidacion" showIcon="true" />
+					<p:outputLabel for="iFondoLiquidacion" value="Fondo liquidación " />
+					<p:calendar id="iFondoLiquidacion" value="#{valoresMaker.fondoLiquidacion}" showOn="button" pattern="dd/MM/yyyy" required="true"/>
 					
 					<p:outputLabel for="iMntMinInversion"
 						value="Monto mínimo de Inversión " />
 					<p:inputText id="iMntMinInversion"
-						value="#{valoresMaker.mntMinInversion}" style="width:118px;" />
+						value="#{valoresMaker.mntMinInversion}" style="width:118px;" required="true"/>
 						
 					<p:outputLabel for="iPlazoMinPermanencia"
 						value="Plazo mínimo de permanencia " />
 					<p:inputText id="iPlazoMinPermanencia"
-						value="#{valoresMaker.plazoMinPermanencia}" style="width:118px;" />
+						value="#{valoresMaker.plazoMinPermanencia}" style="width:118px;" required="true"/>
 						
 					<p:outputLabel for="iPorcentajeMaxTenencia"
 						value="% Máximo de Tenencia " />
 					<p:inputText id="iPorcentajeMaxTenencia"
-						value="#{valoresMaker.porcentajeMaxTenencia}" style="width:118px;" />
+						value="#{valoresMaker.porcentajeMaxTenencia}" style="width:118px;" required="true"/>
 
 				</h:panelGrid>
 			</h:panelGroup>
@@ -313,28 +299,21 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 			</p:tab>
 			</p:accordionPanel>
 			
-			<h:panelGrid columns="2" styleClass="">
-
-				<h:panelGroup layout="block" 
-					style="text-align: left;width: 845px;">
-		
-					<h:panelGroup layout="block" styleClass="">
-					
-						<img src="../../resources/images/altaFondo/procesoVMFondo.png" width="360"
-    		 				height="64" alt="imagen" />
-    		 				
-					</h:panelGroup>
-		
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGroup layout="block" style="width:50%;text-align: left;">
+				
+					<img src="../../resources/images/altaFondo/AC-ValoresMaker.JPG" width="360"
+   		 				height="64" alt="imagen" />
 				</h:panelGroup>
 
-				<h:panelGroup layout="block">
+				<h:panelGroup layout="block" style="text-align:right;">
+					<p:commandButton value="Guardar" action="guardar" styleClass="styleButton"/>
+					<p:spacer width="10"/>
 					<p:commandButton value="Continuar" action="/fondos/checker/valoresCEdit.sp" ajax="false" class="styleButton"/>
 				</h:panelGroup>
-				
+
 			</h:panelGrid>
 			
-			
-
 		</h:form>
 
 	</h:panelGroup>

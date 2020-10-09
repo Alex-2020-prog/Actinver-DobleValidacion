@@ -89,21 +89,15 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 
 		<h:form prependId="false">
 		
-			<h:panelGroup layout="block"
-				style="width:980px;margin:0 auto;background:white;position: relative;">
+			<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
+				style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
 
-				<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
-					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
+				<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Custodia " />
+				<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
+					value="#{valoresMaker.tipoCustodia}" disabled="true"
+					completeMethod="#{valoresMaker.getLstTipoCustodia}" />
 
-					<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Custodia " />
-					<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
-						value="#{valoresMaker.tipoCustodia}"
-						completeMethod="#{valoresMaker.getLstTipoCustodia}" />
-
-				</h:panelGrid>
-
-			</h:panelGroup>
-
+			</h:panelGrid>
 
 			<p:accordionPanel multiple="true">
 				<p:tab title="Información Principal del Fondo">
@@ -142,8 +136,7 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 						value="#{valoresMaker.operadora}"
 						completeMethod="#{valoresMaker.getLstOperadora}" />
 						
-					<p:outputLabel for="iFechaAltaFondo"
-						value="Fecha de alta del fondo " />
+					<p:outputLabel for="iFechaAltaFondo" value="Fecha de alta del fondo " />
 					<p:datePicker id="iFechaAltaFondo" value="#{valoresMaker.fechaAltaFondo}" showIcon="true" disabled="true" pattern="dd/MM/yyyy"/>
 
 					<p:outputLabel for="iMoneda" value="Moneda " />
@@ -156,21 +149,17 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 						value="#{valoresMaker.tipoSocInversion}"
 						completeMethod="#{valoresMaker.getLstTipoSocInversion}" />
 					
-					<p:outputLabel for="iTAperturaFondoCompraOperadora"
-						value="Horario de Apertura para Compra Operadora " />
-					<p:datePicker id="iTAperturaFondoCompraOperadora" showIcon="true" disabled="true" />	
+					<p:outputLabel for="iTAperturaFondoCompraOperadora" value="Horario de Apertura para Compra Operadora " />
+					<p:datePicker id="iTAperturaFondoCompraOperadora" value="#{valoresMaker.horarioAperturaFondoCompraOperadora}" pattern="HH:mm" showIcon="true" timeOnly="true" disabled="true" />	
 					
-					<p:outputLabel for="iHorarioCierreFondoCompraOperadora"
-						value="Horario de Cierre para Compra Operadora " />
-					<p:datePicker id="iHorarioCierreFondoCompraOperadora" showIcon="true" disabled="true" />
+					<p:outputLabel for="iHorarioCierreFondoCompraOperadora" value="Horario de Cierre para Compra Operadora " />
+					<p:datePicker id="iHorarioCierreFondoCompraOperadora" value="#{valoresMaker.horarioCierreFondoCompraOperadora}" pattern="HH:mm" showIcon="true" timeOnly="true" disabled="true" />
 
-					<p:outputLabel for="iHorarioAperturaFondoVentaOperadora"
-						value="Horario de Apertura para Venta Operadora " />
-					<p:datePicker id="iHorarioAperturaFondoVentaOperadora" showIcon="true" disabled="true" />
+					<p:outputLabel for="iHorarioAperturaFondoVentaOperadora" value="Horario de Apertura para Venta Operadora " />
+					<p:datePicker id="iHorarioAperturaFondoVentaOperadora" value="#{valoresMaker.horarioAperturaFondoVentaOperadora}" pattern="HH:mm" showIcon="true" timeOnly="true" disabled="true" />
 
-					<p:outputLabel for="iHorarioCierreFondoVentaOperadora"
-						value="Horario de Cierre para Venta Operadora " />
-					<p:datePicker id="iHorarioCierreFondoVentaOperadora" showIcon="true" disabled="true" />
+					<p:outputLabel for="iHorarioCierreFondoVentaOperadora" value="Horario de Cierre para Venta Operadora " />
+					<p:datePicker id="iHorarioCierreFondoVentaOperadora" value="#{valoresMaker.horarioCierreFondoVentaOperadora}" pattern="HH:mm" showIcon="true" timeOnly="true" disabled="true" />
 					
 					<p:outputLabel for="iHorizonteInversion" value="Horizonte de Inversion " />
 					<p:autoComplete id="iHorizonteInversion" dropdown="true" disabled="true"
@@ -187,20 +176,17 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 						value="#{valoresMaker.calRiesgoCredito}"
 						completeMethod="#{valoresMaker.getLstCalRiesgoCredito}" />
 
-					<p:outputLabel for="iFondoEjecucion"
-						value="Fondo ejecución " />
-					<p:datePicker id="iFondoEjecucion" showIcon="true" disabled="true" />
+					<p:outputLabel for="iFondoEjecucion" value="Fondo ejecución " />
+					<p:datePicker id="iFondoEjecucion" value="#{valoresMaker.fondoEjecucion}" showIcon="true" disabled="true" />
 					
-					<p:outputLabel for="iDia"
-						value="Dia " />
-					<p:datePicker id="iDia" showIcon="true" disabled="true" />
+					<p:outputLabel for="iDia" value="Dia " />
+					<p:datePicker id="iDia" value="#{valoresMaker.dia}" showIcon="true" disabled="true" />
 					
 					<p:outputLabel for="iFondoLiquidacion"
 						value="Fondo liquidación " />
-					<p:datePicker id="iFondoLiquidacion" showIcon="true" disabled="true" />
+					<p:datePicker id="iFondoLiquidacion" value="#{valoresMaker.fondoLiquidacion}" showIcon="true" disabled="true" />
 					
-					<p:outputLabel for="iMntMinInversion"
-						value="Monto mínimo de Inversión " />
+					<p:outputLabel for="iMntMinInversion" value="Monto mínimo de Inversión " />
 					<p:inputText id="iMntMinInversion" disabled="true"
 						value="#{valoresMaker.mntMinInversion}" style="width:118px;" />
 						
@@ -312,7 +298,7 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 		
 					<h:panelGroup layout="block" styleClass="">
 					
-						<img src="../../resources/images/altaFondo/valoresMakerDisable.png" width="360"
+						<img src="../../resources/images/altaFondo/AC-ValoresChk.JPG" width="360"
     		 				height="64" alt="imagen" />
 					</h:panelGroup>
 		
@@ -320,10 +306,9 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 					
 				<h:panelGroup layout="block" style="text-align:right;">
 		
-					<p:commandButton value="Rechazar" action="/fondos/maker/valoresM.sp"  styleClass="styleButton"/><p:outputLabel/>
-						<p:outputLabel value=""/><p:spacer width="5"/>
-					<p:commandButton value="Aceptar" action="/fondos/maker/distribuidoraM.sp" styleClass="styleButton"/><p:outputLabel/>
-						<p:outputLabel value=""/>
+					<p:commandButton value="Rechazar" action="/fondos/maker/valoresM.sp" styleClass="styleButton"/><p:outputLabel/>
+						<p:spacer width="5"/>
+					<p:commandButton value="Vo.Bo." action="/fondos/maker/distribuidoraM.sp" styleClass="styleButton"/><p:outputLabel/>
 		
 				</h:panelGroup>
 		

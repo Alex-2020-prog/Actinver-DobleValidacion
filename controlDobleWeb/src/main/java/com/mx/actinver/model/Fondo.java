@@ -9,6 +9,7 @@ public class Fondo implements Serializable {
 
 	private static final long serialVersionUID = -5038380242505111025L;
 	
+	private String tipoFondo;
 	private String tipoCustodia;
 	private String clavePizarra;
 	private String operadora;
