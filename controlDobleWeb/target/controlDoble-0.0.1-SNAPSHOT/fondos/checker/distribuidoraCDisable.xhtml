@@ -40,22 +40,20 @@
 
 	<h:panelGroup layout="block" styleClass="body-wrapper">
 
-		<h:form prependId="false">
-		
-			<h:panelGroup layout="block"
-				style="width:980px;margin:0 auto;background:white;position: relative;">
-
-				<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
-					style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
-
+		<h:form prependId="false">		
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGrid id="panelTipoFondo" columns="2" width="100%">
 					<p:outputLabel for="iDistribucionFondo" value="Distribución de Fondo: " />
 					<p:autoComplete id="iDistribucionFondo" dropdown="true" disabled="true"
 						value="#{distribucionMaker.distribucionFondo}"
 						completeMethod="#{distribucionMaker.getDistribucionFondo}" />
-
 				</h:panelGrid>
-
-			</h:panelGroup>
+				
+				<h:panelGroup layout="block" style="text-align: right;">	
+					<img src="../../resources/images/altaFondo/AD-DistribucionChk.JPG" width="360"
+   		 				height="64" alt="imagen" />	
+				</h:panelGroup>
+			</h:panelGrid>
 
 			<p:accordionPanel multiple="true">
 				<p:tab title="Información Principal del Fondo">
@@ -417,12 +415,6 @@
 			
 			
 			<h:panelGrid columns="2" width="100%">
-				<h:panelGroup layout="block" style="width:50%;text-align: left;">
-		
-					<img src="../../resources/images/altaFondo/AD-DistribucionChk.JPG" width="360"
-   		 				height="64" alt="imagen" />	
-				</h:panelGroup>
-		
 				<h:panelGroup layout="block" style="text-align:right;">	
 					<p:commandButton value="Rechazar" action="/fondos/maker/distribuidoraM.sp" class="styleButton"/>
 					<p:spacer width="10"/>

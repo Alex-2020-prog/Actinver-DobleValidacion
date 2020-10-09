@@ -19,132 +19,205 @@
 
 	<h:panelGrid columns="2" styleClass="header-wrapper">
 
-		<h:panelGroup layout="block" styleClass="header-info-table" style="text-align:right;">
-				<h:outputLabel value="Conciliación/Liberación" style="font-size:24px;"/>
+		<h:panelGroup layout="block" styleClass="header-info-table"
+			style="text-align:right;">
+			<h:outputLabel value="Conciliación" style="font-size:24px;" />
 		</h:panelGroup>
-		
+
 		<h:panelGroup layout="block" styleClass="header-info-table">
-				<h:outputLabel value="Actinver" style="font-size:32px;" />
+			<h:outputLabel value="Actinver" style="font-size:32px;" />
 		</h:panelGroup>
 	</h:panelGrid>
-	<br/>
+	<br />
 	<h:form styleClass="body-wrapper">
-	
-		<p:panelGrid>
-			<p:column style="border-style:none;">
-				<p:outputLabel for="TipoFdo" value="Tipo de Fondo:" />
-			</p:column>
-			<p:column style="border-style:none;">
-				<p:selectOneMenu id="TipoFdo" style="width:150px;">
-					<f:selectItem itemLabel="Fondo Propio" itemValue="propio" />
-					<f:selectItem itemLabel="Fondo Externo" itemValue="externo" />
-				</p:selectOneMenu>				
-			</p:column>
-			<p:column style="border-style:none;">
-				<p:outputLabel for="TipoCustodia" value="Tipo de Custodia:" />
-			</p:column>
-			<p:column style="border-style:none;">
-				<p:selectOneMenu id="TipoCustodia" style="width:150px;">
-					<f:selectItem itemLabel="Custodia Interna" itemValue="propia" />
-					<f:selectItem itemLabel="Custodia Externa" itemValue="externa" />
-				</p:selectOneMenu>			
-			</p:column>
-		</p:panelGrid>
-		<br/>
-		<p:panelGrid id="tblConcilia" styleClass="header-wrapper">
-		
-			<f:facet name="header">
-				<p:row>
-					<p:column colspan="5">
-						Detalle de Parámetros: Fondo ACTIVR00
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Datos Generales</p:column>
-					<p:column>Lumina Operadora</p:column>
-					<p:column>Calypso Operadora</p:column>
-					<p:column>Lumina Distribuidora</p:column>
-					<p:column>Casa de Bolsa Distribuidora</p:column>
-				</p:row>
-			</f:facet>
-						
-			<p:row>
-	 			<p:column >Clave de Pizarra:ACTI500</p:column>	
-	 			<p:column >Fecha de alta del fondo: 23/10/2019</p:column>	
-	 			<p:column >Cajón Indeval: 12546631</p:column>	
-	 			<p:column >Perfil de Inversión: Default</p:column>	
-	 			<p:column >Plan 176: Si <br/> Plan 218: Si</p:column>	
-			</p:row>
-			
-			<p:row>
-				<p:column>Tipo Valor: Renta Variable</p:column>
-				<p:column>Apertura Compra: 08:30 <br/> Apertura Venta: 08:30</p:column>
-				<p:column>Cheq. EUR: 2329266 <br/> Cheq. USD: 1427855</p:column>
-				<p:column>Compra x títulos: Si <br/>Vende x títulos: Sí</p:column>
-				<p:column>Tipo de Persona: Física, Moral</p:column>
-				
-			</p:row>
-			
-			<p:row>
-	 			<p:column >Operadora: Actinver</p:column>	
-	 			<p:column >Cierre Compra: 14:15<br/>Cierre Venta: 14:15</p:column>	
-	 			<p:column >Código del Producto: 52_ACTI500_A</p:column>	
-	 			<p:column >Compra x importe: Si<br/>Vende x importe: Sí</p:column>	
-	 			<p:column>Compra Opera: Diario<br/>Venta Opera: Diario</p:column>
-			</p:row>
-			
-			<p:row>
-	 			<p:column >Moneda: US</p:column>	
-	 			<p:column >Número Clases Accionarias: 5</p:column>	
-	 			<p:column >Cuenta Nostro: 2145632</p:column>	
-	 			<p:column >Calendarios: MX</p:column>	
-	 			<p:column >Compra Liquida: 48 hrs<br/>Venta Liquida: 48 hrs</p:column>	
-			</p:row>
-			
-		</p:panelGrid>
 
 		<h:panelGroup layout="block">
-			<p:commandButton value="Liberar" class="styleButton"/>
-			<p:spacer width="10"/>
-			<p:commandButton value="Rechazar" onclick="PF('dlg').show();" class="styleButton"/>
+			<p:outputLabel value="Clave de Pizarra:" />
+			<p:spacer width="5" />
+			<p:inputText />
+			<p:commandButton icon="pi pi-search" styleClass="styleButton" />
 		</h:panelGroup>
-		
+		<br />
+		<p:accordionPanel multiple="true">
+			<p:tab title="Detalle del Fondo">
+				<p:panelGrid id="tblConciliaFondo">
+
+					<f:facet name="header">
+						<p:row>
+							<p:column colspan="5">
+						Detalle de Fondo
+					</p:column>
+						</p:row>
+						<p:row>
+							<p:column>Datos Generales</p:column>
+							<p:column>Lumina Operadora</p:column>
+							<p:column>Calypso Operadora</p:column>
+							<p:column>Lumina Distribuidora</p:column>
+							<p:column>Casa de Bolsa Distribuidora</p:column>
+						</p:row>
+					</f:facet>
+
+					<p:row>
+						<p:column>Clave de Pizarra:ACTI500</p:column>
+						<p:column>Fecha de alta del fondo: 23/10/2019</p:column>
+						<p:column>Cajón Indeval: 12546631</p:column>
+						<p:column>Perfil de Inversión: Default</p:column>
+						<p:column>Plan 176: Si <br /> Plan 218: Si</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>Tipo Valor: Renta Variable</p:column>
+						<p:column>Apertura Compra: 08:30 <br /> Apertura Venta: 08:30</p:column>
+						<p:column>Cheq. EUR: 2329266 <br /> Cheq. USD: 1427855</p:column>
+						<p:column>Compra x títulos: Si <br />Vende x títulos: Sí</p:column>
+						<p:column>Tipo de Persona: Física, Moral</p:column>
+
+					</p:row>
+
+					<p:row>
+						<p:column>Operadora: Actinver</p:column>
+						<p:column>Cierre Compra: 14:15<br />Cierre Venta: 14:15</p:column>
+						<p:column>Código del Producto: 52_ACTI500_A</p:column>
+						<p:column>Compra x importe: Si<br />Vende x importe: Sí</p:column>
+						<p:column>Compra Opera: Diario<br />Venta Opera: Diario</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>Moneda: US</p:column>
+						<p:column>Número Clases Accionarias: 5</p:column>
+						<p:column>Cuenta Nostro: 2145632</p:column>
+						<p:column>Calendarios: MX</p:column>
+						<p:column>Compra Liquida: 48 hrs<br />Venta Liquida: 48 hrs</p:column>
+					</p:row>
+
+				</p:panelGrid>
+			</p:tab>
+
+			<p:tab title="Detalle de Sistemas">
+				<p:panelGrid id="tblConciliaSist">
+
+					<f:facet name="header">
+						<p:row>
+							<p:column colspan="5">
+						Detalle de Sistemas
+					</p:column>
+						</p:row>
+						<p:row>
+							<p:column>Datos Generales</p:column>
+							<p:column>Lumina Operadora Estado: Replicado</p:column>
+							<p:column>Calypso Operadora Estado: Fallo</p:column>
+							<p:column>Lumina Distribuidora Estado: Replicado</p:column>
+							<p:column>Casa de Bolsa Distribuidora Estado: Fallo</p:column>
+						</p:row>
+					</f:facet>
+
+					<p:row>
+						<p:column>Clave de Pizarra:ACTI500</p:column>
+						<p:column>Fecha de alta del fondo: 23/10/2019</p:column>
+						<p:column>Cajón Indeval: 12546631</p:column>
+						<p:column>Perfil de Inversión: Default</p:column>
+						<p:column>Plan 176: Si <br /> Plan 218: Si</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>Tipo Valor: Renta Variable</p:column>
+						<p:column>Apertura Compra: 08:30 <br /> Apertura Venta: 08:30</p:column>
+						<p:column>Cheq. EUR: 2329266 <br /> Cheq. USD: 1427855</p:column>
+						<p:column>Compra x títulos: Si <br />Vende x títulos: Sí</p:column>
+						<p:column>Tipo de Persona: Física, Moral</p:column>
+
+					</p:row>
+
+					<p:row>
+						<p:column>Operadora: Actinver</p:column>
+						<p:column>Cierre Compra: 14:15<br />Cierre Venta: 14:15</p:column>
+						<p:column>Código del Producto: 52_ACTI500_A</p:column>
+						<p:column>Compra x importe: Si<br />Vende x importe: Sí</p:column>
+						<p:column>Compra Opera: Diario<br />Venta Opera: Diario</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>Moneda: US</p:column>
+						<p:column>Número Clases Accionarias: 5</p:column>
+						<p:column>Cuenta Nostro: 2145632</p:column>
+						<p:column>Calendarios: MX</p:column>
+						<p:column>Compra Liquida: 48 hrs<br />Venta Liquida: 48 hrs</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column>
+							<p:spacer width="0" />
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;" />
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+					</p:row>
+
+				</p:panelGrid>
+
+			</p:tab>
+		</p:accordionPanel>
+		<h:panelGroup layout="block">
+			<p:commandButton value="Rechazar" onclick="PF('dlg').show();"
+				class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Liberar" class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Modificar" class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Baja" class="styleButton" />
+		</h:panelGroup>
+
 	</h:form>
 
-	    <p:dialog modal="true" showEffect="clip" header="Nota de Rechazo" width="370px" widgetVar="dlg" resizable="false">
-	        <p:panelGrid columns="1">
-	            <p:inputTextarea rows="10" style="width:320px;"/>
-	             	
-				<h:panelGrid>
-					<p:selectOneRadio id="console" value="{radioView.console}" required="true">
-						<f:selectItem itemLabel="Valores" itemValue="valores" />
-						<f:selectItem itemLabel="Distribución" itemValue="distribucion" />
-						<f:selectItem itemLabel="Gestora" itemValue="gestora" />
-					</p:selectOneRadio>
-				</h:panelGrid>
-		        <p:commandButton value="Continuar" onclick= "dispatchScreen()" />
-		
-			</p:panelGrid>
-    	</p:dialog>  
-      	
-<script>
-	function dispatchScreen(){
-		var url = window.location.href;
-		var uri = url.substring(0, url.indexOf("/fondos/"));
-		var op = $(":radio:checked").val();
-		var scr = "";
-		
-		if(op == "valores"){
-			scr="/fondos/maker/valoresM.sp";
-		}else if(op == "distribucion"){
-			scr="/fondos/maker/distribuidoraM.sp";
-		}else if(op == "gestora"){
-			scr="/fondos/maker/gestora.sp";
-		}
-		
-		window.location.replace(uri+scr);
-	}
+	<p:dialog modal="true" showEffect="clip" header="Nota de Rechazo"
+		width="370px" widgetVar="dlg" resizable="false">
+		<p:panelGrid columns="1">
+			<p:inputTextarea rows="10" style="width:320px;" />
 
-</script>
+			<h:panelGrid>
+				<p:selectOneRadio id="console" value="{radioView.console}"
+					required="true">
+					<f:selectItem itemLabel="Contratos" itemValue="contratos" />
+					<f:selectItem itemLabel="Valores" itemValue="valores" />
+					<f:selectItem itemLabel="Distribución" itemValue="distribucion" />
+				</p:selectOneRadio>
+			</h:panelGrid>
+			<p:commandButton value="Continuar" onclick="dispatchScreen()" />
+
+		</p:panelGrid>
+	</p:dialog>
+
+	<script>
+		function dispatchScreen() {
+			var url = window.location.href;
+			var uri = url.substring(0, url.indexOf("/fondos/"));
+			var op = $(":radio:checked").val();
+			var scr = "";
+
+			if (op == "valores") {
+				scr = "/fondos/maker/valoresM.sp";
+			} else if (op == "distribucion") {
+				scr = "/fondos/maker/distribuidoraM.sp";
+			} else if (op == "gestora") {
+				scr = "/fondos/maker/contratos.sp";
+			}
+
+			window.location.replace(uri + scr);
+		}
+	</script>
 </h:body>
 </html>

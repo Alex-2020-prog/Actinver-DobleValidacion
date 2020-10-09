@@ -60,8 +60,6 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 
 </h:head>
 
-
-
 <h:body>
 
 	<h:panelGrid columns="2" styleClass="header-wrapper">
@@ -89,14 +87,20 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 
 		<h:form prependId="false">
 		
-			<h:panelGrid id="panelTipoFondo" columns="2" layout="flex"
-				style="width:470px;border-width:0px;border-style:none;margin-top:20px;margin-bottom:20px;">
-
-				<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Custodia " />
-				<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
-					value="#{valoresMaker.tipoCustodia}" disabled="true"
-					completeMethod="#{valoresMaker.getLstTipoCustodia}" />
-
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGrid id="panelTipoFondo" columns="2" width="100%">
+	
+					<p:outputLabel for="iTipoDistribucionFondo" value="Tipo de Fondo" />
+					<p:autoComplete id="iTipoDistribucionFondo" dropdown="true"
+						value="#{valoresMaker.tipoCustodia}" required="true"
+						completeMethod="#{valoresMaker.getLstTipoCustodia}" />
+				</h:panelGrid>
+				
+				<h:panelGroup layout="block" style="text-align: right;">
+					<img src="../../resources/images/altaFondo/AC-ValoresChk.JPG" width="360"
+    		 				height="64" alt="imagen" />
+				
+				</h:panelGroup>
 			</h:panelGrid>
 
 			<p:accordionPanel multiple="true">
@@ -113,7 +117,7 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 							
 					</h:panelGrid>
 
-			</h:panelGroup>
+				</h:panelGroup>
 			
 			<h:panelGroup layout="block"
 				style="width:940px;margin:0 auto;background:white;position: relative;">
@@ -294,18 +298,7 @@ body .ui-steps.custom .ui-steps-item.ui-state-highlight .ui-menuitem-link .ui-st
 			
 			<h:panelGrid columns="2" width="100%">
 
-				<h:panelGroup layout="block" style="width:50%;text-align: left;">
-		
-					<h:panelGroup layout="block" styleClass="">
-					
-						<img src="../../resources/images/altaFondo/AC-ValoresChk.JPG" width="360"
-    		 				height="64" alt="imagen" />
-					</h:panelGroup>
-		
-				</h:panelGroup>
-					
-				<h:panelGroup layout="block" style="text-align:right;">
-		
+				<h:panelGroup layout="block" style="text-align:right;">		
 					<p:commandButton value="Rechazar" action="/fondos/maker/valoresM.sp" styleClass="styleButton"/><p:outputLabel/>
 						<p:spacer width="5"/>
 					<p:commandButton value="Vo.Bo." action="/fondos/maker/distribuidoraM.sp" styleClass="styleButton"/><p:outputLabel/>

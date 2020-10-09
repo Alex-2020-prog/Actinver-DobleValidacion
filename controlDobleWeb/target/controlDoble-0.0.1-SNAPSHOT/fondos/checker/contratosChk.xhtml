@@ -40,6 +40,23 @@
 
 	<h:panelGroup layout="block" styleClass="body-wrapper">
 		<h:form id="form-gestor">
+			<h:panelGrid columns="2" width="100%">
+				<h:panelGrid id="panelTipoFondo" columns="2" width="100%">
+					<p:column>
+						<p:outputLabel for="iTipoFondo" value="Tipo de Fondo " />
+					</p:column>	
+					<p:column>		
+						<p:selectOneMenu id="iTipoFondo" value="#{dtGestora.fondo.tipoFondo}">
+							<f:selectItem itemLabel="Propio" itemValue="propio" />
+							<f:selectItem itemLabel="Externo" itemValue="externo" />
+						</p:selectOneMenu>
+					</p:column>
+				</h:panelGrid>
+				
+				<h:panelGroup layout="block" style="text-align:right;">
+					<img src="../../resources/images/altaFondo/AB-ContratosChk.JPG" width="360" height="64" alt="imagen" />
+				</h:panelGroup>
+			</h:panelGrid>
 
 			<p:accordionPanel multiple="true">
 		        <p:tab title="Información Principal del Fondo">
@@ -478,12 +495,6 @@
 		    </p:accordionPanel>
 
 			<h:panelGrid columns="2" width="100%">
-				<h:panelGroup layout="block" style="width:50%;text-align: left;">
-					
-					<img src="../../resources/images/altaFondo/AB-ContratosChk.JPG" width="360"
-   		 				height="64" alt="imagen" />
-				</h:panelGroup>
-
 				<h:panelGroup  layout="block" style="text-align:right;">
 					<p:commandButton value="Rechazar" action="/fondos/maker/contratos.sp" styleClass="styleButton"/>
 					<p:spacer width="10"/>

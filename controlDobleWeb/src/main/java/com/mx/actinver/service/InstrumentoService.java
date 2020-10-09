@@ -39,7 +39,7 @@ public class InstrumentoService {
 		inst2.setDescripcion("Portafolio de Empresas del Sector Salud");
 		inst2.setEstatus("Gestoria Maker");
 		inst2.setDias(4);
-		inst2.setLink("/fondos/maker/gestora");
+		inst2.setLink("/fondos/maker/contratos");
 		inst2.setEscala("Llegó a su límite de tiempo en el flujo de Gestora");
 		lst.add(inst2);
 		return lst;

@@ -26,9 +26,30 @@
 		</h:panelGroup>
 	</h:panelGrid>
 
-	<br />
 	<h:form styleClass="body-wrapper">
-		<br />
+	
+		<h:panelGrid columns="2" width="100%">
+		
+			<h:panelGroup layout="block">
+				<p:outputLabel value="Clave de Pizarra:"/>
+				<p:spacer width="5"/>
+				<p:inputText />
+				<p:commandButton icon="pi pi-search" styleClass="styleButton"/>
+			</h:panelGroup>
+			<h:panelGroup style="text-align:right;" layout="block">
+				<p:outputLabel for="iEstatus" value="Estatus:" />
+				<p:spacer width="5" height="20"/>
+				<p:selectOneMenu id="iEstatus" >
+					<f:selectItem itemLabel="Valores Checker" itemValue="1" />
+					<f:selectItem itemLabel="Conciliación" itemValue="2" />
+					<f:selectItem itemLabel="Modificacion" itemValue="3" />
+					<f:selectItem itemLabel="Gestoria Checker" itemValue="4" />
+				</p:selectOneMenu>
+			</h:panelGroup>
+		
+		</h:panelGrid>
+
+		
 		<p:dataTable id="tblInst" var="inst"
 			value="#{dtInstRowView.instrumentos}">
 			<p:column headerText="Tipo de Instrumento">
@@ -55,6 +76,9 @@
 				<div align="center"><h:outputText value="#{inst.escala}"/></div>
 			</p:column>
 		</p:dataTable>
+		<h:panelGroup layout="block" style="text-align:right;">
+			<p:commandButton value="Nuevo Fondo" action="save" styleClass="styleButton"/>
+		</h:panelGroup>
 	</h:form>
 
 </h:body>
