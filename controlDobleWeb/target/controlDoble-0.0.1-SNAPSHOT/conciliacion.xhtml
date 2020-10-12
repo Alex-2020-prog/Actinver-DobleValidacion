@@ -32,10 +32,10 @@
 	<h:form styleClass="body-wrapper">
 
 		<h:panelGroup layout="block">
-			<p:outputLabel value="Clave de Pizarra:"/>
-			<p:spacer width="5"/>
+			<p:outputLabel value="Clave de Pizarra:" />
+			<p:spacer width="5" />
 			<p:inputText />
-			<p:commandButton icon="pi pi-search" styleClass="styleButton"/>
+			<p:commandButton icon="pi pi-search" styleClass="styleButton" />
 		</h:panelGroup>
 		<br />
 		<p:accordionPanel multiple="true">
@@ -45,7 +45,7 @@
 					<f:facet name="header">
 						<p:row>
 							<p:column colspan="5">
-						Detalle de Parámetros: Fondo ACTIVR00
+						Detalle de Fondo
 					</p:column>
 						</p:row>
 						<p:row>
@@ -92,22 +92,22 @@
 
 				</p:panelGrid>
 			</p:tab>
-			
+
 			<p:tab title="Detalle de Sistemas">
-					<p:panelGrid id="tblConciliaSist">
+				<p:panelGrid id="tblConciliaSist">
 
 					<f:facet name="header">
 						<p:row>
 							<p:column colspan="5">
-						Detalle de Parámetros: Fondo ACTIVR00
+						Detalle de Sistemas
 					</p:column>
 						</p:row>
 						<p:row>
 							<p:column>Datos Generales</p:column>
-							<p:column>Lumina Operadora</p:column>
-							<p:column>Calypso Operadora</p:column>
-							<p:column>Lumina Distribuidora</p:column>
-							<p:column>Casa de Bolsa Distribuidora</p:column>
+							<p:column>Lumina Operadora Estado: Replicado</p:column>
+							<p:column>Calypso Operadora Estado: Fallo</p:column>
+							<p:column>Lumina Distribuidora Estado: Replicado</p:column>
+							<p:column>Casa de Bolsa Distribuidora Estado: Fallo</p:column>
 						</p:row>
 					</f:facet>
 
@@ -144,15 +144,41 @@
 						<p:column>Compra Liquida: 48 hrs<br />Venta Liquida: 48 hrs</p:column>
 					</p:row>
 
+					<p:row>
+						<p:column>
+							<p:spacer width="0" />
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;" />
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+						<p:column>
+							<p:commandButton value="Replicar" style="font-family: Lato;font-size: 12px;"/>
+							<p:commandButton value="Baja" style="font-family: Lato;font-size: 12px;"/>
+						</p:column>
+					</p:row>
+
 				</p:panelGrid>
-			
+
 			</p:tab>
 		</p:accordionPanel>
 		<h:panelGroup layout="block">
-			<p:commandButton value="Liberar" class="styleButton" />
-			<p:spacer width="10" />
 			<p:commandButton value="Rechazar" onclick="PF('dlg').show();"
 				class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Liberar" class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Modificar" class="styleButton" />
+			<p:spacer width="10" />
+			<p:commandButton value="Baja" class="styleButton" />
 		</h:panelGroup>
 
 	</h:form>
@@ -165,9 +191,9 @@
 			<h:panelGrid>
 				<p:selectOneRadio id="console" value="{radioView.console}"
 					required="true">
+					<f:selectItem itemLabel="Contratos" itemValue="contratos" />
 					<f:selectItem itemLabel="Valores" itemValue="valores" />
 					<f:selectItem itemLabel="Distribución" itemValue="distribucion" />
-					<f:selectItem itemLabel="Gestora" itemValue="gestora" />
 				</p:selectOneRadio>
 			</h:panelGrid>
 			<p:commandButton value="Continuar" onclick="dispatchScreen()" />
@@ -187,7 +213,7 @@
 			} else if (op == "distribucion") {
 				scr = "/fondos/maker/distribuidoraM.sp";
 			} else if (op == "gestora") {
-				scr = "/fondos/maker/gestora.sp";
+				scr = "/fondos/maker/contratos.sp";
 			}
 
 			window.location.replace(uri + scr);
